@@ -1,0 +1,1025 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Praxistag Startklar · Realschule plus Edenkoben</title>
+<meta name="description" content="Alles zum Praxistag an der Realschule plus Edenkoben: Ablauf, Ansprechpersonen, Übungen, Telefon-Leitfaden und Checkliste für die Praxistagmappe.">
+<link rel="icon" type="image/png" href="bilder/praxistag-logo.png">
+<style>
+:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;font-size:14px;font-family:system-ui,sans-serif}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=Kalam:wght@700&display=swap">
+<style>
+/* Layout: Wabenmuster aus dem Praxistag-Logo. Jede Übung hat eine Logo-Farbe; erledigte Übungen füllen das Waben-Abzeichen. */
+:root{
+  --bg:#FBF8F3; --surface:#FFFFFF; --surface-2:#F3EEE6; --fg:#1E1A22; --muted:#5E5763; --line:#E4DCD0;
+  --orange:#F39200; --red:#C0182A; --blue:#1A7FC1; --green:#3E9B24; --purple:#5D2466;
+  --orange-ink:#A85F00; --on-accent:#FFFFFF;
+  --ok:#2E8A1E; --bad:#C0182A;
+  --display:"Bricolage Grotesque", "Arial Rounded MT Bold", system-ui, sans-serif;
+  --body:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --hand:"Kalam", "Comic Sans MS", cursive;
+  --r:18px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#17131B; --surface:#221C27; --surface-2:#2C2532; --fg:#F4EFF6; --muted:#B8AFBD; --line:#3A3240;
+  --orange:#FFA826; --red:#FF5A67; --blue:#4CB0F0; --green:#72CF52; --purple:#C27CCF;
+  --orange-ink:#FFB84D; --on-accent:#17131B; --ok:#72CF52; --bad:#FF6B76; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#17131B; --surface:#221C27; --surface-2:#2C2532; --fg:#F4EFF6; --muted:#B8AFBD; --line:#3A3240;
+  --orange:#FFA826; --red:#FF5A67; --blue:#4CB0F0; --green:#72CF52; --purple:#C27CCF;
+  --orange-ink:#FFB84D; --on-accent:#17131B; --ok:#72CF52; --bad:#FF6B76; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:1.0625rem;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);line-height:1.08;text-wrap:balance;margin:0}
+h2{font-size:clamp(1.9rem,4.5vw,2.8rem);font-weight:800;letter-spacing:-.01em}
+h3{font-size:1.3rem;font-weight:700}
+p{margin:0}
+a{color:var(--blue)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+.hex{clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%)}
+.eyebrow{font-family:var(--hand);font-size:1.25rem;color:var(--red);transform:rotate(-2deg);display:inline-block}
+.lead{color:var(--muted);max-width:62ch;font-size:1.1rem}
+section{padding-block:clamp(48px,8vw,88px)}
+.sec-head{display:grid;gap:10px;margin-bottom:32px}
+
+/* Nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:14px;height:60px}
+.nav-logo{height:34px;width:auto;background:#fff;border-radius:8px;padding:3px 6px}
+.nav-links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;margin-left:auto;min-width:0}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{white-space:nowrap;text-decoration:none;color:var(--fg);font-weight:600;font-size:.95rem;padding:6px 12px;border-radius:999px}
+.nav-links a:hover{background:var(--surface-2)}
+.badge-mini{display:flex;gap:2px;flex:none}
+.badge-mini span{width:10px;height:9px;background:var(--line)}
+
+/* Hero */
+.hero{padding-block:clamp(32px,6vw,64px) clamp(40px,6vw,72px);position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.hero-logo{background:#fff;border-radius:22px;padding:16px 22px;display:inline-flex;align-items:center;gap:18px;flex-wrap:wrap;max-width:100%;box-shadow:0 10px 30px -18px rgba(40,20,50,.45)}
+.hero-logo img{display:block;width:min(300px,56vw);height:auto}
+.hero-logo img.school-logo{width:auto;height:88px;mix-blend-mode:multiply}
+.logo-sep{width:2px;align-self:stretch;background:#E4DCD0}
+.school-name{margin-top:14px;font-weight:700;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;font-size:.85rem}
+@media (max-width:520px){.logo-sep{display:none}.hero-logo img.school-logo{height:72px}}
+.hero h1{font-size:clamp(2.6rem,7vw,4.6rem);font-weight:800;letter-spacing:-.02em;margin-top:26px}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero .lead{margin-top:16px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:12px 22px;font-weight:700;cursor:pointer;text-decoration:none;font-size:1rem;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-main{background:var(--orange);color:#1E1A22}
+.btn-ghost{background:transparent;color:var(--fg);box-shadow:inset 0 0 0 2px var(--line)}
+.honey{position:relative;aspect-ratio:1/1;max-width:100%;width:100%}
+.honey .cell{position:absolute;width:44%;aspect-ratio:1.155/1;display:grid;place-items:center;text-align:center;padding:8%;color:#fff}
+.honey .cell b{display:block;font-family:var(--display);font-size:clamp(1.6rem,4vw,2.4rem);line-height:1}
+.honey .cell small{display:block;font-size:clamp(.72rem,1.6vw,.88rem);font-weight:600;line-height:1.25;margin-top:4px}
+.c1{left:2%;top:4%;background:var(--purple)}
+.c2{left:36%;top:23%;background:var(--red)}
+.c3{left:2%;top:42%;background:var(--blue)}
+.c4{left:36%;top:61%;background:#F39200}
+.c5{left:70%;top:42%;background:var(--green);width:30%!important;padding:4%!important}
+.honey,.steps,.badge-hexes,.badge-mini,.tabs{--purple:#5D2466;--red:#C0182A;--blue:#1A7FC1;--green:#3E9B24}
+.c4{color:#1E1A22!important}
+.step .n.dark{color:#1E1A22}
+:root .honey .cell{color:#fff}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .honey .cell{filter:saturate(.9)}}
+
+/* Info cards */
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.fact{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:grid;gap:8px;align-content:start}
+.fact .k{font-family:var(--display);font-weight:800;font-size:1.15rem}
+.fact p{color:var(--muted);font-size:1rem}
+.fact .dot{width:34px;height:30px}
+
+/* Timeline */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:s}
+.step{display:grid;grid-template-columns:64px 1fr;gap:18px;position:relative;padding-bottom:26px}
+.step:not(:last-child)::before{content:"";position:absolute;left:31px;top:56px;bottom:0;width:3px;background:var(--line);border-radius:2px}
+.step .n{width:64px;height:56px;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:1.4rem;color:#fff}
+.step h3{margin-top:6px}
+.step p{color:var(--muted);margin-top:4px;max-width:60ch}
+.step .tag{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+
+/* People */
+.people{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.person{border-radius:var(--r);padding:20px;background:var(--surface-2);display:grid;gap:6px;align-content:start}
+.person h3{font-size:1.1rem}
+.person p{color:var(--muted);font-size:.98rem}
+.linkcard{text-decoration:none;color:var(--fg);box-shadow:inset 0 0 0 2px transparent;transition:box-shadow .15s, transform .15s}
+.linkcard:hover{box-shadow:inset 0 0 0 2px var(--blue);transform:translateY(-2px)}
+.linkcard h3{color:var(--blue)}
+
+/* Exercises */
+.ex-band{background:var(--surface-2)}
+.badge-big{display:flex;align-items:center;gap:18px;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 20px;margin-bottom:22px}
+.badge-hexes{position:relative;width:124px;height:88px;flex:none}
+.badge-hexes span{position:absolute;width:40px;height:35px;background:var(--line);transition:background .4s, transform .4s}
+.badge-hexes span.on{transform:scale(1.06)}
+.badge-text b{font-family:var(--display);font-size:1.2rem}
+.badge-text p{color:var(--muted);font-size:.95rem}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.tab{border:0;border-radius:999px;padding:10px 16px;font-weight:700;cursor:pointer;background:var(--surface);box-shadow:inset 0 0 0 2px var(--line);display:inline-flex;align-items:center;gap:8px}
+.tab .sw{width:16px;height:14px}
+.tab[aria-selected="true"]{background:var(--fg);color:var(--bg);box-shadow:none}
+.tab .done{font-size:.8rem}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:clamp(18px,4vw,34px);min-width:0}
+.panel-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;margin-bottom:18px}
+.panel-head p{color:var(--muted)}
+.progress{height:8px;background:var(--surface-2);border-radius:99px;overflow:hidden;margin-bottom:22px}
+.progress i{display:block;height:100%;width:0;background:var(--orange);transition:width .3s}
+.q{font-family:var(--display);font-size:clamp(1.3rem,3vw,1.7rem);font-weight:700;margin-bottom:18px;text-wrap:balance}
+.opts{display:grid;gap:10px}
+.opt{text-align:left;border:0;cursor:pointer;background:var(--surface-2);border-radius:14px;padding:14px 16px;font-weight:600;box-shadow:inset 0 0 0 2px transparent;transition:box-shadow .15s, background .15s}
+.opt:hover:not(:disabled){box-shadow:inset 0 0 0 2px var(--blue)}
+.opt:disabled{cursor:default}
+.opt.right{box-shadow:inset 0 0 0 3px var(--ok);background:color-mix(in srgb,var(--ok) 14%,var(--surface))}
+.opt.wrong{box-shadow:inset 0 0 0 3px var(--bad);background:color-mix(in srgb,var(--bad) 12%,var(--surface))}
+.feedback{margin-top:16px;padding:14px 16px;border-radius:14px;background:var(--surface-2);font-size:1rem}
+.feedback b{font-family:var(--display)}
+.row-end{display:flex;justify-content:flex-end;gap:10px;margin-top:18px;flex-wrap:wrap}
+.score{font-family:var(--display);font-size:clamp(2.6rem,8vw,4rem);font-weight:800;color:var(--orange)}
+.scene{font-family:var(--hand);font-size:1.05rem;color:var(--purple);margin-bottom:6px}
+.crit{display:inline-block;margin-top:8px;font-size:.82rem;font-weight:700;padding:3px 10px;border-radius:99px;background:var(--surface);box-shadow:inset 0 0 0 2px var(--line)}
+
+/* Match */
+.match{display:grid;grid-template-columns:1fr 1.6fr;gap:14px}
+.col{display:grid;gap:10px;align-content:start;min-width:0}
+.chip{border:0;cursor:pointer;text-align:left;border-radius:14px;padding:12px 14px;background:var(--surface-2);font-weight:600;box-shadow:inset 0 0 0 2px transparent;font-size:.98rem}
+.chip.term{font-family:var(--display);font-weight:700;font-size:1.05rem}
+.chip.sel{box-shadow:inset 0 0 0 3px var(--blue)}
+.chip.done{background:color-mix(in srgb,var(--ok) 16%,var(--surface));box-shadow:inset 0 0 0 2px var(--ok);cursor:default;opacity:.85}
+.chip.shake{animation:shake .35s}
+@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+
+/* Self check */
+.crit-list{display:grid;gap:12px}
+.crit-row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:12px 14px;border-radius:14px;background:var(--surface-2)}
+.crit-row b{font-family:var(--display)}
+.crit-row small{display:block;color:var(--muted);font-size:.9rem;line-height:1.35}
+.seg{display:flex;gap:4px;background:var(--surface);border-radius:999px;padding:4px;flex-wrap:wrap}
+.seg button{border:0;cursor:pointer;border-radius:999px;padding:7px 12px;font-size:.88rem;font-weight:700;background:transparent;white-space:nowrap}
+.seg button[aria-pressed="true"].s3{background:var(--green);color:#fff}
+.seg button[aria-pressed="true"].s2{background:var(--orange);color:#1E1A22}
+.seg button[aria-pressed="true"].s1{background:var(--blue);color:#fff}
+.tips{display:grid;gap:10px;margin-top:6px}
+.tips li{margin-left:1.1em}
+
+/* Interests */
+.int-grid{display:flex;flex-wrap:wrap;gap:10px}
+.int{border:0;cursor:pointer;border-radius:999px;padding:10px 16px;font-weight:600;background:var(--surface-2);box-shadow:inset 0 0 0 2px transparent}
+.int[aria-pressed="true"]{background:var(--blue);color:#fff}
+.results{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:20px}
+.res{border-radius:16px;padding:16px;background:var(--surface-2);display:grid;gap:6px;align-content:start}
+.res .meter{height:6px;background:var(--surface);border-radius:9px;overflow:hidden}
+.res .meter i{display:block;height:100%;background:var(--green)}
+.res p{color:var(--muted);font-size:.95rem}
+
+/* Order exercise */
+.order{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.order .col h4{margin:0 0 4px;font-family:var(--display);font-size:1rem;color:var(--muted);font-weight:700}
+.placed{counter-reset:o;display:grid;gap:8px;align-content:start;min-height:60px;border:2px dashed var(--line);border-radius:14px;padding:10px}
+.placed div{counter-increment:o;display:flex;gap:10px;align-items:flex-start;background:color-mix(in srgb,var(--ok) 14%,var(--surface));border-radius:10px;padding:10px 12px;font-weight:600;font-size:.97rem}
+.placed div::before{content:counter(o);font-family:var(--display);font-weight:800;color:var(--ok);min-width:1.2em}
+.placed:empty::after{content:"Hier landen deine Schritte.";color:var(--muted);font-size:.95rem;padding:6px}
+
+/* Phone call */
+.call{display:grid;gap:12px;max-width:720px}
+.bubble{max-width:85%;padding:12px 16px;border-radius:18px;font-size:1rem;line-height:1.45}
+.bubble.them{background:var(--surface-2);border-bottom-left-radius:6px;justify-self:start}
+.bubble.me{background:var(--blue);color:#fff;border-bottom-right-radius:6px;justify-self:end}
+.bubble .who{display:block;font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;opacity:.75;margin-bottom:2px}
+.call-head{display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:14px;background:var(--surface-2);font-weight:600}
+.call-head .ring{width:36px;height:32px;background:var(--green);display:grid;place-items:center;color:#fff;font-size:.9rem}
+.cheat{display:grid;gap:6px;margin-top:6px}
+.cheat li{margin-left:1.1em}
+
+/* Letter */
+.letter-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:20px;align-items:start;margin-top:26px}
+.form{display:grid;gap:12px;min-width:0}
+.form fieldset{border:0;padding:0;margin:0;display:grid;gap:10px}
+.form legend{font-family:var(--display);font-weight:700;font-size:1.05rem;margin-bottom:6px}
+.form label{display:grid;gap:4px;font-size:.9rem;font-weight:600;color:var(--muted)}
+.form input,.form select,.form textarea{font:inherit;font-size:1rem;color:var(--fg);background:var(--surface-2);border:2px solid transparent;border-radius:10px;padding:9px 12px;width:100%}
+.form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--blue)}
+.form textarea{min-height:88px;resize:vertical}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.paper{--paper:#FFFFFF;--ink:#1E1A22;background:var(--paper);color:var(--ink);border-radius:6px;padding:clamp(18px,4vw,36px);font-family:Arial,Helvetica,sans-serif;font-size:.86rem;line-height:1.5;box-shadow:0 14px 34px -18px rgba(30,20,40,.5);border:1px solid var(--line);white-space:pre-wrap;overflow-wrap:anywhere;min-width:0;position:sticky;top:80px}
+.paper mark{background:#FFE3B0;color:#6B3D00;border-radius:3px;padding:0 3px}
+.paper .subj{font-weight:700}
+.strengths{display:flex;flex-wrap:wrap;gap:6px}
+.strengths .int{padding:7px 12px;font-size:.9rem}
+.sub-h{font-family:var(--display);font-size:1.2rem;font-weight:700;margin-top:28px}
+
+/* Phone guide */
+.coach{position:relative;background:color-mix(in srgb,var(--green) 14%,var(--surface));box-shadow:inset 0 0 0 2px color-mix(in srgb,var(--green) 45%,transparent)}
+.days{display:flex;gap:4px;margin-bottom:4px}
+.days b{font-family:var(--display);font-size:.8rem;width:38px;height:33px;display:grid;place-items:center;background:var(--green);color:#fff;clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%)}
+.guide-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:22px;align-items:start}
+.guide-box{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:grid;gap:10px;min-width:0}
+.guide-box h3{font-size:1.15rem}
+.guide-box ul{margin:0;padding-left:1.2em;display:grid;gap:6px;color:var(--muted)}
+.guide-box ul b{color:var(--fg)}
+.gsteps{list-style:none;margin:0;padding:0;display:grid;gap:14px;counter-reset:g}
+.gsteps>li{counter-increment:g;display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
+.gsteps>li::before{content:counter(g);width:44px;height:38px;display:grid;place-items:center;font-family:var(--display);font-weight:800;color:#fff;background:var(--blue);clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%)}
+.gsteps h4{margin:6px 0 4px;font-family:var(--display);font-size:1.05rem}
+.say{display:block;background:var(--surface-2);border-radius:12px;padding:10px 14px;margin-top:6px;font-size:.98rem;line-height:1.5}
+.say::before{content:"Du sagst: ";font-family:var(--hand);color:var(--red);font-size:1rem}
+.say.ask::before{content:"Du fragst: "}
+.say.mb::before{content:"Auf den Anrufbeantworter: "}
+.ph{background:color-mix(in srgb,var(--orange) 25%,transparent);border-radius:4px;padding:0 4px;font-weight:600}
+.ifthen{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.ifthen div{background:var(--surface-2);border-radius:14px;padding:14px 16px;display:grid;gap:4px;align-content:start}
+.ifthen b{font-family:var(--display)}
+.ifthen p{color:var(--muted);font-size:.97rem}
+.calls{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+.calls table{border-collapse:collapse;width:100%;min-width:760px;font-size:.95rem}
+.calls th{text-align:left;font-family:var(--display);font-weight:700;padding:12px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+.calls td{padding:6px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+.calls tr:last-child td{border-bottom:0}
+.calls input,.calls select{font:inherit;font-size:.93rem;color:var(--fg);background:var(--surface-2);border:2px solid transparent;border-radius:8px;padding:7px 9px;width:100%}
+.calls input:focus,.calls select:focus{outline:none;border-color:var(--blue)}
+.calls td.n{font-family:var(--display);font-weight:800;color:var(--muted);text-align:center;padding-top:12px;width:32px}
+.guide-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+@media (max-width:820px){.guide-grid{grid-template-columns:1fr}}
+/* Checklist */
+.check-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.check-group{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px;min-width:0}
+.check-group h3{font-size:1.1rem;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.check-group h3 span{width:20px;height:17px;flex:none}
+.check-group label{display:flex;gap:10px;align-items:flex-start;padding:7px 0;cursor:pointer;border-top:1px dashed var(--line)}
+.check-group label:first-of-type{border-top:0}
+.check-group input{width:20px;height:20px;accent-color:var(--green);margin-top:3px;flex:none}
+.check-group input:checked + span{text-decoration:line-through;color:var(--muted)}
+.check-top{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.check-top .progress{flex:1;min-width:180px;margin:0;height:12px}
+.check-top .progress i{background:var(--green)}
+.check-top b{font-family:var(--display);font-size:1.3rem;font-variant-numeric:tabular-nums}
+
+/* FAQ */
+.faq{display:grid;gap:10px;max-width:780px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:4px 18px}
+summary{cursor:pointer;font-family:var(--display);font-weight:700;font-size:1.1rem;padding:12px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--orange);font-size:1.5rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{padding-bottom:14px;color:var(--muted)}
+
+/* Contact / footer */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.contact .box{border-radius:var(--r);padding:22px;background:var(--surface);border:1px solid var(--line);display:grid;gap:8px;align-content:start}
+.copy-line{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.copy-line code{font-family:var(--body);font-weight:700;background:var(--surface-2);padding:4px 10px;border-radius:8px;user-select:all}
+.teachers{display:flex;flex-wrap:wrap;gap:8px}
+.teachers span{background:var(--surface-2);border-radius:999px;padding:6px 14px;font-family:var(--display)}
+.mini-btn{border:0;cursor:pointer;border-radius:999px;padding:5px 12px;font-size:.85rem;font-weight:700;background:var(--surface-2);box-shadow:inset 0 0 0 2px var(--line)}
+footer{padding-block:32px 48px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+footer .wrap{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+footer img{height:44px;background:#fff;border-radius:8px;padding:4px 8px}
+
+@media (max-width:820px){
+  .hero-grid{grid-template-columns:1fr}
+  .honey{max-width:420px;margin:0 auto}
+  .facts,.check-grid,.contact{grid-template-columns:1fr}
+  .match{grid-template-columns:1fr}
+  .crit-row{grid-template-columns:1fr}
+  .order,.letter-grid,.two{grid-template-columns:1fr}
+  .paper{position:static}
+  .nav-logo{height:28px}
+}
+@media (min-width:560px) and (max-width:820px){.facts{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Seitennavigation">
+  <div class="wrap">
+    <a href="#top" aria-label="Zum Seitenanfang"><img class="nav-logo" src="bilder/praxistag-logo.png" alt="Praxistag – Schule trifft Beruf"></a>
+    <div class="nav-links">
+      <a href="#was">Was ist das?</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#team">Wer hilft dir?</a>
+      <a href="#ueben">Übungen</a>
+      <a href="#telefon">Telefon-Leitfaden</a>
+      <a href="#mappe">Mappe</a>
+      <a href="#links">Links</a>
+      <a href="#faq">Fragen</a>
+    </div>
+    <div class="badge-mini" aria-hidden="true" id="badgeMini"></div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-logo"><img class="school-logo" src="bilder/schul-logo.png" alt="Logo der Realschule plus Edenkoben"><span class="logo-sep" aria-hidden="true"></span><img src="bilder/praxistag-logo.png" alt="Praxistag – Schule trifft Beruf. Wir machen mit!"></div>
+      <p class="school-name">Praxistag an der Realschule plus Edenkoben</p>
+      <h1>Ein Tag pro Woche im <em>echten Job</em>.</h1>
+      <p class="lead">Beim Praxistag arbeitest du mindestens ein halbes Jahr lang jede Woche einen Tag in einem Betrieb deiner Wahl. Du probierst einen Beruf aus, zeigst, was du kannst, und knüpfst Kontakte für deine Ausbildung.</p>
+      <div class="cta-row">
+        <a class="btn btn-main" href="#ueben">Übungen starten</a>
+        <a class="btn btn-ghost" href="#ablauf">So läuft's ab</a>
+        <a class="btn btn-ghost" href="https://vimeo.com/749180111" target="_blank" rel="noopener">Erklärvideo ansehen ↗</a>
+      </div>
+    </div>
+    <div class="honey" aria-label="Der Praxistag in Zahlen">
+      <div class="cell hex c1"><div><b>1</b><small>Tag pro Woche im Betrieb</small></div></div>
+      <div class="cell hex c2"><div><b>6–12</b><small>Monate lang</small></div></div>
+      <div class="cell hex c3"><div><b>8 · 9</b><small>Klassenstufe (Förderschulen: 9&nbsp;·&nbsp;10)</small></div></div>
+      <div class="cell hex c4"><div><b>0 €</b><small>kostet es dich</small></div></div>
+      <div class="cell hex c5"><div><b>1</b><small>Halbzeit&shy;gespräch</small></div></div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="was">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Kurz erklärt</span>
+      <h2>Was ist der Praxistag?</h2>
+      <p class="lead">Ein Langzeit-Praktikum zur Berufsorientierung für alle, die die Berufsreife anstreben. An einem festen Wochentag gehst du in deinen Betrieb, an den anderen Tagen ganz normal in die Schule. Rund 290 Schulen in Rheinland-Pfalz machen mit.</p>
+    </div>
+    <div class="facts">
+      <div class="fact"><span class="dot hex" style="background:var(--purple)"></span><span class="k">Echter Arbeitsalltag</span><p>Du arbeitest mit und lernst Pünktlichkeit, Sorgfalt und Teamarbeit im echten Job kennen.</p></div>
+      <div class="fact"><span class="dot hex" style="background:var(--red)"></span><span class="k">Schule wird praktisch</span><p>Prozentrechnen, Flächen berechnen, Berichte schreiben: Im Betrieb merkst du, wofür du das brauchst.</p></div>
+      <div class="fact"><span class="dot hex" style="background:var(--blue)"></span><span class="k">Dein Ticket zur Ausbildung</span><p>Der Betrieb lernt dich über Monate kennen. Viele Jugendliche bekommen so ihren Ausbildungsplatz.</p></div>
+      <div class="fact"><span class="dot hex" style="background:var(--orange)"></span><span class="k">Ein langer Arbeitstag</span><p>Laut Infobrief deiner Schule bist du 7 Stunden plus 1 Stunde Mittagspause im Betrieb. Deine Lehrkraft nennt dir die genauen Zeiten.</p></div>
+      <div class="fact"><span class="dot hex" style="background:var(--green)"></span><span class="k">Zählt für die Note</span><p>Deine Leistungen im Praxistag und deine Mappe fließen in die Note ein. Welche Fächer das sind, erfährst du in der Schule.</p></div>
+      <div class="fact"><span class="dot hex" style="background:var(--muted)"></span><span class="k">Überall möglich</span><p>Handwerk, Handel, Industrie, Pflege, Kita, Rathaus, Gärtnerei, Weingut: Du suchst dir einen Beruf, der zu dir passt.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="ablauf" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Schritt für Schritt</span>
+      <h2>Dein Weg durch den Praxistag</h2>
+    </div>
+    <ol class="steps">
+      <li class="step"><span class="n hex" style="background:var(--purple)">1</span><div><h3>Stärken entdecken</h3><p>Im Unterricht und in Workshops findest du heraus, was du gut kannst und was dich interessiert.</p><span class="tag">In der Schule</span></div></li>
+      <li class="step"><span class="n hex" style="background:var(--red)">2</span><div><h3>Praxistagplatz suchen</h3><p>Du suchst dir einen Betrieb in einem Beruf, der zu deinen Stärken passt. Deine Lehrkräfte helfen dir dabei, und die Praktikumssuche der Arbeitsagentur zeigt dir Plätze in deiner Nähe (Links unten).</p><span class="tag">Vor dem Start</span></div></li>
+      <li class="step"><span class="n hex" style="background:var(--blue)">3</span><div><h3>Vorpraktikum</h3><p>Meist arbeitest du zuerst ein bis zwei Wochen am Stück im selben Betrieb. So siehst du, ob der Beruf wirklich passt, und lernst die Abläufe kennen.</p><span class="tag">1–2 Wochen</span></div></li>
+      <li class="step"><span class="n hex dark" style="background:#F39200">4</span><div><h3>Praxistag startet</h3><p>Jetzt bist du an einem festen Tag pro Woche im Betrieb, an den anderen Tagen in der Schule. Du schreibst kurze Berichte und sammelst alles in deiner Praxistagmappe.</p><span class="tag">mindestens 6, bis zu 12 Monate</span></div></li>
+      <li class="step"><span class="n hex" style="background:var(--green)">5</span><div><h3>Halbzeitgespräch</h3><p>Zur Hälfte sprichst du mit der Berufsberatung der Agentur für Arbeit: Was läuft gut? Was willst du noch ausprobieren? Wie geht es weiter?</p><span class="tag">Zur Hälfte</span></div></li>
+      <li class="step"><span class="n hex" style="background:var(--purple)">6</span><div><h3>Nächste Schritte</h3><p>Du bewirbst dich für eine Ausbildung oder suchst nach Alternativen. Du und der Betrieb entscheiden selbst, ob ihr weiter zusammenarbeitet.</p><span class="tag">Danach</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="team" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Du bist nicht allein</span>
+      <h2>Wer hilft dir?</h2>
+    </div>
+    <div class="people">
+      <div class="person"><h3>Deine Praxistag-Lehrkraft</h3><p>Herr Fischer oder Herr Eberhardt. Sie bereiten dich vor, besuchen dich im Betrieb, geben dir Feedback und bewerten deine Mappe.</p></div>
+      <div class="person"><h3>Betreuer*in im Betrieb</h3><p>Zeigt dir die Arbeit, beantwortet Fragen und füllt jeden Monat einen Beurteilungsbogen aus.</p></div>
+      <div class="person coach"><span class="days" aria-label="Mittwoch und Donnerstag"><b>Mi</b><b>Do</b></span><h3>Übergangscoach</h3><p>Hilft dir bei der Suche nach einem Praxistag-Platz, beim Anschreiben, beim Üben von Telefonaten und bei den Schritten nach dem Praxistag. Du findest den Übergangscoach <strong>mittwochs und donnerstags</strong> bei uns an der Schule.</p></div>
+      <div class="person"><h3>Berufsberatung</h3><p>Die Agentur für Arbeit führt mit dir das Halbzeitgespräch und hilft bei der Berufswahl.</p></div>
+      <div class="person"><h3>Trainer*innen</h3><p>Coachen dich in Workshops vor und während des Praxistags, zum Beispiel beim Bewerbungstraining.</p></div>
+      <div class="person"><h3>Deine Eltern</h3><p>Erzähl zu Hause regelmäßig, was du erlebst. Deine Eltern können auch mit zum Halbzeitgespräch kommen.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="ueben" class="ex-band">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Ausprobieren!</span>
+      <h2>Übungen: Bist du startklar?</h2>
+      <p class="lead">Acht Übungen, acht Waben. Jede erledigte Übung färbt eine Wabe deines Abzeichens ein. Die letzten drei helfen dir direkt bei der Suche nach deinem Praxistag-Platz.</p>
+    </div>
+    <div class="badge-big">
+      <div class="badge-hexes" aria-hidden="true">
+        
+      </div>
+      <div class="badge-text"><b id="badgeTitle">0 von 8 Waben</b><p id="badgeSub">Starte mit dem Quiz oder such dir eine Übung aus.</p></div>
+    </div>
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <div class="panel" id="panel" role="tabpanel"></div>
+  </div>
+</section>
+
+<section id="telefon">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Zum Mitnehmen</span>
+      <h2>Telefon-Leitfaden für deine Praktikumssuche</h2>
+      <p class="lead">Leg dir diesen Leitfaden beim Anrufen neben das Handy. Die <span class="ph">markierten Stellen</span> ersetzt du durch deine eigenen Angaben. Üben kannst du vorher in der Übung „Telefonat“ oder mit dem Übergangscoach (mittwochs und donnerstags).</p>
+    </div>
+
+    <div class="guide-grid">
+      <div class="guide-box">
+        <h3>Vor dem Anruf</h3>
+        <ul>
+          <li><b>Betrieb kennen:</b> Schau dir die Website an. Was macht der Betrieb, welche Berufe gibt es?</li>
+          <li><b>Ansprechperson:</b> Steht auf der Website, wer für Praktika zuständig ist? Notiere den Namen.</li>
+          <li><b>Bereitlegen:</b> diesen Leitfaden, Stift, Papier, deinen Stundenplan und den Termin deines Praxistags.</li>
+          <li><b>Ruhiger Ort:</b> kein Bus, keine Freunde im Hintergrund, Handy geladen.</li>
+          <li><b>Gute Zeit:</b> vormittags zwischen 9 und 11 Uhr oder nachmittags zwischen 14 und 16 Uhr. Nicht in der Mittagspause und nicht kurz vor Feierabend.</li>
+          <li><b>Rufnummer anzeigen:</b> Ruf nicht mit unterdrückter Nummer an. Deine Mailbox-Ansage sollte seriös klingen.</li>
+          <li><b>Einmal tief durchatmen und lächeln:</b> Das hört man am Telefon!</li>
+        </ul>
+      </div>
+
+      <div class="guide-box">
+        <h3>Das Gespräch Schritt für Schritt</h3>
+        <ol class="gsteps">
+          <li><div><h4>Begrüßen und vorstellen</h4>
+            <span class="say">„Guten Tag, mein Name ist <span class="ph">Vorname Nachname</span>. Ich bin Schülerin/Schüler der Klasse <span class="ph">8a</span> an der Realschule plus Edenkoben.“</span></div></li>
+          <li><div><h4>Nach der richtigen Person fragen</h4>
+            <span class="say ask">„Ich suche einen Praktikumsplatz. Können Sie mir sagen, wer bei Ihnen für Praktika zuständig ist?“</span>
+            <span class="say ask">„Könnten Sie mich bitte mit <span class="ph">Frau/Herrn …</span> verbinden?“</span>
+            <p style="color:var(--muted);margin-top:6px;font-size:.95rem">Wirst du verbunden, stellst du dich bei der neuen Person noch einmal vor.</p></div></li>
+          <li><div><h4>Dein Anliegen erklären</h4>
+            <span class="say">„Ich mache an meiner Schule beim Praxistag mit. Das ist ein Langzeitpraktikum: Ab <span class="ph">Monat</span> bin ich ein halbes bis ganzes Jahr lang jeden <span class="ph">Wochentag</span> im Betrieb. Davor gibt es meist ein Vorpraktikum von ein bis zwei Wochen. Ich interessiere mich für den Beruf <span class="ph">Beruf</span>, weil <span class="ph">dein Grund</span>.“</span></div></li>
+          <li><div><h4>Fragen stellen</h4>
+            <span class="say ask">„Haben Sie für diese Zeit einen Platz frei?“</span>
+            <span class="say ask">„Soll ich Ihnen eine Bewerbung schicken? An welche Adresse und an wen?“</span>
+            <span class="say ask">„Kann ich mich bei Ihnen persönlich vorstellen?“</span></div></li>
+          <li><div><h4>Mitschreiben und wiederholen</h4>
+            <p style="color:var(--muted);font-size:.97rem">Schreib Namen, Termine und E-Mail-Adressen sofort auf. Wiederhole sie zur Sicherheit:</p>
+            <span class="say">„Ich wiederhole kurz: Ich schicke die Bewerbung an <span class="ph">E-Mail-Adresse</span>, zu Händen von <span class="ph">Frau/Herrn …</span>.“</span></div></li>
+          <li><div><h4>Freundlich verabschieden</h4>
+            <span class="say">„Vielen Dank für Ihre Zeit, <span class="ph">Frau/Herr …</span>. Auf Wiederhören!“</span>
+            <p style="color:var(--muted);margin-top:6px;font-size:.95rem">Warte, bis die andere Person aufgelegt hat. Trag danach alles in deine Anrufliste ein.</p></div></li>
+        </ol>
+      </div>
+    </div>
+
+    <h3 style="margin:34px 0 14px;font-size:1.35rem">Was tun, wenn …</h3>
+    <div class="ifthen">
+      <div><b>… die zuständige Person nicht da ist?</b><p>„Wann kann ich sie am besten erreichen?“ Notiere Namen und Uhrzeit, und ruf genau dann wieder an.</p></div>
+      <div><b>… der Anrufbeantworter drangeht?</b><p>Sprich langsam und deutlich:</p><span class="say mb">„Guten Tag, hier ist <span class="ph">Name</span> von der Realschule plus Edenkoben. Ich suche einen Platz für den Praxistag und bitte um Rückruf unter <span class="ph">Nummer</span>. Ich wiederhole: <span class="ph">Nummer</span>. Vielen Dank!“</span></div>
+      <div><b>… du etwas nicht verstanden hast?</b><p>„Entschuldigung, könnten Sie das bitte wiederholen?“ oder „Wie schreibt man den Namen?“ Nachfragen ist völlig in Ordnung.</p></div>
+      <div><b>… du eine Absage bekommst?</b><p>„Schade, trotzdem vielen Dank. Kennen Sie vielleicht einen anderen Betrieb, der Praktikantinnen und Praktikanten nimmt?“ Dann ruf beim nächsten Betrieb auf deiner Liste an.</p></div>
+      <div><b>… du eine Zusage bekommst?</b><p>Notiere alle Infos und den nächsten Schritt. Sag deiner Praxistag-Lehrkraft Bescheid, damit die Unterlagen für den Betrieb rechtzeitig fertig werden.</p></div>
+      <div><b>… du sehr aufgeregt bist?</b><p>Das ist normal! Üb den Anruf vorher mit dem Übergangscoach (Mi + Do) oder mit deinen Eltern. Der Leitfaden hilft dir, nichts zu vergessen.</p></div>
+    </div>
+
+    <h3 style="margin:34px 0 6px;font-size:1.35rem">Meine Anrufliste</h3>
+    <p style="color:var(--muted);margin-bottom:14px">Trag hier deine Betriebe ein und halte fest, was beim Anruf herauskam. Die Liste bleibt nur auf diesem Gerät gespeichert.</p>
+    <div class="calls"><table><thead><tr><th>#</th><th>Betrieb</th><th>Telefon</th><th>Ansprechperson</th><th>Angerufen am</th><th>Ergebnis</th><th>Nächster Schritt</th></tr></thead><tbody id="callRows"></tbody></table></div>
+    <div class="guide-actions" style="margin-top:14px"><button class="btn btn-main" type="button" id="guideCopy">Leitfaden als Text kopieren</button><span style="color:var(--muted);font-size:.93rem">Zum Ausdrucken in Word oder einer Notiz-App einfügen.</span></div>
+  </div>
+</section>
+
+<section id="mappe">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Behalte den Überblick</span>
+      <h2>Checkliste für deine Praxistagmappe</h2>
+      <p class="lead">Das gehört in deine Mappe. Hake ab, was du schon hast. Dein Stand wird nur in diesem Browser gespeichert.</p>
+    </div>
+    <div class="check-top"><b id="checkCount">0 / 0</b><div class="progress"><i id="checkBar"></i></div><button class="mini-btn" id="checkReset" type="button">Zurücksetzen</button></div>
+    <div class="check-grid" id="checkGrid"></div>
+  </div>
+</section>
+
+<section id="links" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Für deine Suche</span>
+      <h2>Hilfreiche Links</h2>
+    </div>
+    <div class="people">
+      <a class="person linkcard" href="https://zukunft-laeuft.bildung-rp.de/app/" target="_blank" rel="noopener"><h3>Zukunft läuft ↗</h3><p>Finde heraus, welches Berufsfeld zu dir passt. Läuft im Browser, ohne Anmeldung.</p></a>
+      <a class="person linkcard" href="https://www.arbeitsagentur.de/jobsuche/suche?angebotsart=4&amp;was=Praktikum%20m%C3%B6glich&amp;id=10000-1196547299-S" target="_blank" rel="noopener"><h3>Praktikumssuche ↗</h3><p>Die Bundesagentur für Arbeit zeigt dir Praktikumsplätze in der Nähe deines Wohn- oder Schulorts.</p></a>
+      <a class="person linkcard" href="https://vimeo.com/749180111" target="_blank" rel="noopener"><h3>Erklärvideo ↗</h3><p>Der Praxistag in wenigen Minuten erklärt.</p></a>
+      <a class="person linkcard" href="https://cloud.schulcampus-rlp.de/edu-sharing/components/collections?scope=EDU_ALL&amp;id=5d79424c-75c7-4435-b679-bc0ca6617325" target="_blank" rel="noopener"><h3>Infos für dich und deine Eltern ↗</h3><p>Alle Infos und Regeln zum Praxistag auf dem Schulcampus RLP. Keine Anmeldung nötig.</p></a>
+      <a class="person linkcard" href="https://www.praktikumstage-rheinland-pfalz.de/" target="_blank" rel="noopener"><h3>Praktikumstage RLP ↗</h3><p>Eintägige Schnupperpraktika in verschiedenen Betrieben, um vorher Berufe zu testen.</p></a>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Gut zu wissen</span>
+      <h2>Häufige Fragen</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Was mache ich, wenn ich krank bin?</summary><p>Ruf am Morgen im Betrieb <strong>und</strong> in der Schule an, bevor dein Arbeitstag beginnt. Das steht auch auf deinem Anwesenheitsnachweis.</p></details>
+      <details><summary>Gehe ich an den anderen Tagen in die Schule?</summary><p>Ja. Nur an deinem festen Praxistag bist du im Betrieb, an allen anderen Tagen hast du ganz normal Unterricht.</p></details>
+      <details><summary>Kostet der Praxistag etwas?</summary><p>Nein. Für dich ist der Praxistag kostenlos. Lehrkräfte, Berufsberatung und Trainer*innen werden vom Land Rheinland-Pfalz und der Bundesagentur für Arbeit bezahlt.</p></details>
+      <details><summary>Bekomme ich Geld vom Betrieb?</summary><p>Nein. Der Praxistag ist ein Schulpraktikum, du lernst dort und wirst nicht bezahlt.</p></details>
+      <details><summary>Darf ich im Betrieb Fotos machen?</summary><p>Nur, wenn deine Betreuerin oder dein Betreuer es vorher erlaubt. Fotografiere nie Kundinnen, Kunden oder Kolleg*innen ohne deren Zustimmung.</p></details>
+      <details><summary>Was passiert, wenn mir der Beruf nicht gefällt?</summary><p>Das ist auch ein wichtiges Ergebnis! Sprich früh mit deiner Praxistag-Lehrkraft. Im Halbzeitgespräch überlegst du mit der Berufsberatung, welche Alternativen es gibt.</p></details>
+      <details><summary>Muss ich jeden Arbeitstag aufschreiben?</summary><p>Ja, kurz. Pro Tag im Betrieb schreibst du einen Kurzbericht in Stichworten. Dazu kommen einige ausführliche Tagesberichte, etwa eine Seite lang. Mach dir schon im Betrieb Notizen.</p></details>
+      <details><summary>Kann ich nach dem Praxistag im Betrieb bleiben?</summary><p>Vielleicht! Viele Betriebe nutzen den Praxistag, um künftige Azubis kennenzulernen. Ob ihr weiter zusammenarbeitet, entscheidet ihr gemeinsam.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Noch Fragen?</span><h2>Hier bekommst du Antworten</h2></div>
+    <div class="contact">
+      <div class="box">
+        <h3>An der Realschule plus Edenkoben</h3>
+        <p class="lead" style="font-size:1rem">Deine erste Ansprechperson ist deine Praxistag-Lehrkraft. Frag einfach im Unterricht oder schreib eine Nachricht.</p>
+        <div class="teachers"><span><b>Herr Fischer</b></span><span><b>Herr Eberhardt</b></span></div>
+        <p style="color:var(--muted);font-size:.98rem">Unterstützung bei Platzsuche, Bewerbung und Telefonat bekommst du außerdem beim <b style="color:var(--fg)">Übergangscoach</b>, <b style="color:var(--fg)">mittwochs und donnerstags</b> an der Schule.</p>
+        <p style="color:var(--muted);font-size:.98rem">Herrn Fischer und Herrn Eberhardt erreichst du über <b style="color:var(--fg)">WebUntis</b>: Schreib ihnen dort eine Nachricht.</p>
+      </div>
+      <div class="box">
+        <h3>Praxistag-Team in Rheinland-Pfalz</h3>
+        <p style="color:var(--muted)">Pädagogisches Landesinstitut, Speyer</p>
+        <div class="copy-line"><code id="mail">praxistag@pl.rlp.de</code><button class="mini-btn" type="button" data-copy="mail">Kopieren</button></div>
+        <div class="copy-line"><code id="tel">0261 9702 241</code><button class="mini-btn" type="button" data-copy="tel">Kopieren</button></div>
+        <a href="https://bildung.rlp.de/praxistag/" target="_blank" rel="noopener">bildung.rlp.de/praxistag</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="bilder/schul-logo.png" alt="Logo der Realschule plus Edenkoben">
+    <img src="bilder/praxistag-logo.png" alt="Praxistag – Schule trifft Beruf">
+    <p>Infoseite der Realschule plus Edenkoben für Schülerinnen und Schüler. Die Inhalte stammen von bildung.rlp.de/praxistag, aus den Praxistag-Flyern des Ministeriums für Bildung und des Pädagogischen Landesinstituts Rheinland-Pfalz sowie aus der Praxistagmappe. Was an deiner Schule genau gilt, sagt dir deine Lehrkraft.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+  const $=s=>document.querySelector(s);
+  const el=(t,a={},h="")=>{const e=document.createElement(t);for(const k in a){if(k==="class")e.className=a[k];else e.setAttribute(k,a[k])}if(h)e.innerHTML=h;return e};
+  const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+
+  /* ---------- Badge ---------- */
+  const EX=[
+    {id:"quiz",name:"Quiz",color:"var(--purple)"},
+    {id:"sit",name:"Was tust du?",color:"var(--red)"},
+    {id:"match",name:"Begriffe",color:"var(--blue)"},
+    {id:"self",name:"Selbstcheck",color:"#E08600"},
+    {id:"int",name:"Berufe-Finder",color:"var(--green)"},
+    {id:"search",name:"Platz finden",color:"var(--purple)"},
+    {id:"call",name:"Telefonat",color:"var(--red)"},
+    {id:"letter",name:"Anschreiben",color:"var(--blue)"}
+  ];
+  (function(){const h=document.querySelector(".badge-hexes");EX.forEach((e,i)=>{const c=Math.floor(i/2),r=i%2;const s=document.createElement("span");s.className="hex";s.style.left=(c*28)+"px";s.style.top=(r*35+(c%2)*17.5)+"px";h.appendChild(s)})})();
+  let done=store.get("pt-done",{});
+  function markDone(id){if(!done[id]){done[id]=true;store.set("pt-done",done);renderBadge();renderTabs()}}
+  function renderBadge(){
+    const n=EX.filter(e=>done[e.id]).length;
+    document.querySelectorAll(".badge-hexes span").forEach((s,i)=>{const on=done[EX[i].id];s.style.background=on?EX[i].color:"";s.classList.toggle("on",!!on)});
+    const mini=$("#badgeMini");mini.innerHTML="";EX.forEach(e=>{const s=el("span",{class:"hex"});if(done[e.id])s.style.background=e.color;mini.appendChild(s)});
+    const T=EX.length;
+    $("#badgeTitle").textContent=n+" von "+T+" Waben";
+    $("#badgeSub").textContent=n===T?"Abzeichen komplett! Du bist startklar für den Praxistag.":n===0?"Starte mit dem Quiz oder such dir eine Übung aus.":"Weiter so! Noch "+(T-n)+" Übung"+(T-n===1?"":"en")+" bis zum vollen Abzeichen.";
+  }
+
+  /* ---------- Tabs ---------- */
+  let current=store.get("pt-tab","quiz");
+  function renderTabs(){
+    const t=$("#tabs");t.innerHTML="";
+    EX.forEach(e=>{
+      const b=el("button",{class:"tab",role:"tab",type:"button","aria-selected":String(e.id===current),id:"tab-"+e.id});
+      b.innerHTML='<span class="sw hex" style="background:'+e.color+'"></span>'+e.name+(done[e.id]?' <span class="done" aria-label="erledigt">✓</span>':"");
+      b.onclick=()=>{current=e.id;store.set("pt-tab",current);renderTabs();renderPanel()};
+      t.appendChild(b);
+    });
+  }
+  function renderPanel(){const p=$("#panel");p.innerHTML="";p.setAttribute("aria-labelledby","tab-"+current);(({quiz:Quiz,sit:Situations,match:Match,self:Self,int:Interests,search:Search,call:Call,letter:Letter})[current]||Quiz)(p)}
+
+  /* ---------- Generic multiple choice ---------- */
+  function MC(p,cfg){
+    const items=cfg.items;let i=0,score=0;
+    const head=el("div",{class:"panel-head"},'<h3>'+cfg.title+'</h3><p>'+cfg.sub+'</p>');
+    const bar=el("div",{class:"progress"},"<i></i>");
+    const body=el("div");p.append(head,bar,body);
+    function show(){
+      bar.firstChild.style.width=(i/items.length*100)+"%";
+      body.innerHTML="";
+      if(i>=items.length){
+        bar.firstChild.style.width="100%";
+        const good=score>=Math.ceil(items.length*0.7);
+        body.innerHTML='<div class="score">'+score+' / '+items.length+'</div><p class="lead" style="margin-top:8px">'+(good?cfg.win:cfg.retry)+'</p>';
+        const r=el("div",{class:"row-end"});const again=el("button",{class:"btn btn-ghost",type:"button"},"Nochmal");again.onclick=()=>{i=0;score=0;show()};r.appendChild(again);body.appendChild(r);
+        if(good)markDone(cfg.id);
+        return;
+      }
+      const it=items[i];
+      if(it.scene)body.appendChild(el("div",{class:"scene"},it.scene));
+      body.appendChild(el("div",{class:"q"},it.q));
+      const opts=el("div",{class:"opts"});
+      const order=shuffle(it.a.map((t,k)=>({t,k})));
+      order.forEach(o=>{
+        const b=el("button",{class:"opt",type:"button"},o.t);
+        b.onclick=()=>{
+          const right=o.k===it.c;if(right)score++;
+          opts.querySelectorAll("button").forEach((x,xi)=>{x.disabled=true;if(order[xi].k===it.c)x.classList.add("right")});
+          if(!right)b.classList.add("wrong");
+          const f=el("div",{class:"feedback","aria-live":"polite"},'<b>'+(right?"Richtig! ":"Nicht ganz. ")+'</b>'+it.e+(it.crit?'<br><span class="crit">Das zählt bei: '+it.crit+'</span>':""));
+          body.appendChild(f);
+          const r=el("div",{class:"row-end"});const nx=el("button",{class:"btn btn-main",type:"button"},i===items.length-1?"Ergebnis ansehen":"Weiter");
+          nx.onclick=()=>{i++;show()};r.appendChild(nx);body.appendChild(r);nx.focus({preventScroll:true});
+        };
+        opts.appendChild(b);
+      });
+      body.appendChild(opts);
+    }
+    show();
+  }
+
+  function Quiz(p){MC(p,{id:"quiz",title:"Praxistag-Quiz",sub:"10 Fragen · ab 7 richtigen gibt's die Wabe",win:"Stark! Du kennst dich mit dem Praxistag aus.",retry:"Schau dir oben „Was ist das?“ und den Ablauf noch mal an und versuch es erneut. Ab 7 Punkten gibt's die Wabe.",items:[
+    {q:"Wie oft bist du während des Praxistags im Betrieb?",a:["Einen Tag pro Woche","Jeden Tag","Einmal im Monat"],c:0,e:"An einem festen Wochentag gehst du in den Betrieb statt in die Schule."},
+    {q:"Wie lange dauert der Praxistag insgesamt?",a:["Sechs Monate bis ein Jahr","Zwei Wochen","Drei Jahre"],c:0,e:"Die Praxisphase dauert mindestens sechs und bis zu zwölf Monate. Deine Schule legt den genauen Zeitraum fest."},
+    {q:"Was machst du an den anderen Tagen der Woche?",a:["Ich gehe ganz normal in die Schule","Ich habe frei","Ich arbeite in einem zweiten Betrieb"],c:0,e:"Nur ein Tag pro Woche ist Praxistag. An den übrigen Tagen hast du regulär Unterricht."},
+    {q:"Was machst du meistens, bevor der Praxistag startet?",a:["Ein Vorpraktikum von 1–2 Wochen im selben Betrieb","Eine Prüfung bei der IHK","Nichts, es geht direkt los"],c:0,e:"Im Vorpraktikum lernst du den Betrieb kennen und prüfst, ob der Beruf passt."},
+    {q:"Mit wem führst du das Halbzeitgespräch?",a:["Mit der Berufsberatung der Agentur für Arbeit","Mit der Schulleitung","Mit deinen Mitschüler*innen"],c:0,e:"Die Berufsberatung schaut mit dir zurück und nach vorne. Deine Eltern dürfen mitkommen."},
+    {q:"Wie viel kostet dich der Praxistag?",a:["Nichts","50 € pro Monat","Das zahlt der Betrieb dir zurück"],c:0,e:"Für dich ist er kostenlos. Land und Bundesagentur für Arbeit finanzieren die Begleitung."},
+    {q:"Wo hältst du fest, was du im Betrieb erlebst?",a:["In der Praxistagmappe (Berufswahlportfolio)","Nur in deinem Kopf","Im Klassenbuch"],c:0,e:"Kurzberichte, Tagesberichte, Steckbrief, Fachbegriffe: Alles kommt in deine Mappe."},
+    {q:"Du wachst krank auf. Wen informierst du?",a:["Den Betrieb und die Schule","Nur die Schule","Niemanden, ist ja nur ein Praktikum"],c:0,e:"Bei Krankheit rufst du im Betrieb und in der Schule an.",crit:"Zuverlässigkeit"},
+    {q:"Wo darf dein Praxistag stattfinden?",a:["In Betrieben, sozialen Einrichtungen und Behörden","Nur in Handwerksbetrieben","Nur in großen Firmen"],c:0,e:"Ob Werkstatt, Kita, Supermarkt oder Rathaus: Wichtig ist, dass der Beruf zu dir passt."},
+    {q:"Was hat der Betrieb vom Praxistag?",a:["Er lernt mögliche Azubis über Monate gut kennen","Er bekommt Geld für jede Praktikantin und jeden Praktikanten","Er muss dich danach übernehmen"],c:0,e:"Der Betrieb sieht, wie du dich entwickelst. Ob ihr danach zusammenarbeitet, entscheidet ihr gemeinsam."}
+  ]})}
+
+  function Situations(p){MC(p,{id:"sit",title:"Was tust du?",sub:"6 Situationen aus dem Arbeitsalltag",win:"Super! Du weißt, wie man sich im Betrieb verhält. Genau darauf achtet dein Betrieb im Beurteilungsbogen.",retry:"Lies dir die Erklärungen noch einmal durch und probier es nochmal. Ab 5 Punkten gibt's die Wabe.",items:[
+    {scene:"7:40 Uhr, Bushaltestelle",q:"Dein Bus fällt aus. Du kommst mindestens 20 Minuten zu spät. Was machst du?",a:["Sofort im Betrieb anrufen und Bescheid sagen","Einfach später kommen und nichts sagen","Heute gar nicht hingehen"],c:0,e:"Wer Bescheid sagt, zeigt Verantwortung. Ohne Anruf macht sich dein Betrieb Sorgen oder plant falsch.",crit:"Zuverlässigkeit / Pünktlichkeit"},
+    {scene:"In der Werkstatt",q:"Deine Betreuerin erklärt dir eine Aufgabe, aber du hast einen Schritt nicht verstanden.",a:["Nachfragen, bevor ich anfange","Irgendwie loslegen, wird schon passen","Warten, bis jemand merkt, dass ich nichts mache"],c:0,e:"Nachfragen ist kein Zeichen von Schwäche. So vermeidest du Fehler, und das spart allen Zeit.",crit:"Kommunikationsfähigkeit"},
+    {scene:"15:30 Uhr, noch 30 Minuten",q:"Du bist mit deiner Aufgabe fertig. Was nun?",a:["Fragen, wo ich noch helfen kann","Handy rausholen, bis Feierabend ist","Schon mal nach Hause gehen"],c:0,e:"Eigeninitiative fällt positiv auf und steht sogar extra auf dem Beurteilungsbogen.",crit:"Eigeninitiative"},
+    {scene:"Nach dem Mittag",q:"Ein Kollege sagt dir, dass du die Regale falsch eingeräumt hast.",a:["Zuhören, nachfragen, wie es richtig geht, und es besser machen","Beleidigt sein und nichts sagen","Erklären, dass es nicht deine Schuld war"],c:0,e:"Kritik hilft dir, besser zu werden. Wer sie annimmt, wirkt erwachsen und lernt schneller.",crit:"Kritikfähigkeit"},
+    {scene:"Für deine Mappe",q:"Du willst deinen Arbeitsplatz für die Mappe fotografieren.",a:["Vorher meine Betreuerin oder meinen Betreuer um Erlaubnis fragen","Schnell heimlich ein Foto machen","Ein Foto von Kund*innen machen, die gerade da sind"],c:0,e:"Fotos nur mit Genehmigung, und niemals Personen ohne ihre Zustimmung.",crit:"Zuverlässigkeit"},
+    {scene:"Nach zwei Monaten",q:"Du merkst: Der Beruf gefällt dir überhaupt nicht.",a:["Mit meiner Praxistag-Lehrkraft sprechen und das Halbzeitgespräch nutzen","Einfach nicht mehr hingehen","Bis zum Ende schweigen und mich langweilen"],c:0,e:"Zu wissen, was du nicht willst, ist auch wichtig. Gemeinsam findet ihr eine Lösung oder Alternative.",crit:"Konfliktfähigkeit"}
+  ]})}
+
+  /* ---------- Match ---------- */
+  function Match(p){
+    const pairs=[
+      ["Vorpraktikum","Ein bis zwei Wochen am Stück im Betrieb, bevor der wöchentliche Praxistag beginnt."],
+      ["Halbzeitgespräch","Gespräch mit der Berufsberatung zur Hälfte des Praxistags."],
+      ["Kurzbericht","Stichworte zu einem Tag im Betrieb: Datum, Arbeitszeit, Abteilung, Tätigkeiten."],
+      ["Tagesbericht","Ein ausgewählter Arbeitstag, ausführlich und in ganzen Sätzen beschrieben (ca. 1 Seite)."],
+      ["Branche","Der Wirtschaftsbereich, zu dem ein Betrieb gehört, z. B. Handel oder Handwerk."],
+      ["Fachausdruck","Ein Wort aus der Fachsprache eines Berufs, z. B. „kolorieren“ für färben."],
+      ["Beurteilungsbogen","Der Betrieb bewertet darauf deine Arbeit mit Noten von 1 bis 5."],
+      ["Duale Ausbildung","Du lernst im Betrieb und in der Berufsschule gleichzeitig."]
+    ];
+    let left=shuffle(pairs.map((x,i)=>({t:x[0],i}))),right=shuffle(pairs.map((x,i)=>({t:x[1],i})));
+    let sel=null,matched=0,tries=0;
+    p.append(el("div",{class:"panel-head"},'<h3>Begriffe zuordnen</h3><p>Tippe links einen Begriff an, dann rechts die passende Erklärung.</p>'));
+    const bar=el("div",{class:"progress"},"<i></i>");p.appendChild(bar);
+    const m=el("div",{class:"match"}),L=el("div",{class:"col"}),R=el("div",{class:"col"});m.append(L,R);p.appendChild(m);
+    const status=el("div",{class:"feedback","aria-live":"polite"},"Noch "+pairs.length+" Paare.");p.appendChild(status);
+    left.forEach(o=>{const b=el("button",{class:"chip term",type:"button"},o.t);b.dataset.i=o.i;b.onclick=()=>{if(b.classList.contains("done"))return;L.querySelectorAll(".sel").forEach(x=>x.classList.remove("sel"));b.classList.add("sel");sel=b};L.appendChild(b)});
+    right.forEach(o=>{const b=el("button",{class:"chip",type:"button"},o.t);b.dataset.i=o.i;b.onclick=()=>{
+      if(b.classList.contains("done"))return;
+      if(!sel){status.innerHTML="Wähle zuerst links einen Begriff.";return}
+      tries++;
+      if(sel.dataset.i===b.dataset.i){sel.classList.remove("sel");sel.classList.add("done");b.classList.add("done");sel.disabled=b.disabled=true;sel=null;matched++;
+        bar.firstChild.style.width=(matched/pairs.length*100)+"%";
+        status.innerHTML=matched===pairs.length?"<b>Alle Paare gefunden!</b> Du hast "+tries+" Versuche gebraucht.":"<b>Passt!</b> Noch "+(pairs.length-matched)+" Paare.";
+        if(matched===pairs.length){markDone("match");const r=el("div",{class:"row-end"});const a=el("button",{class:"btn btn-ghost",type:"button"},"Nochmal");a.onclick=()=>renderPanel();r.appendChild(a);p.appendChild(r)}
+      }else{b.classList.remove("shake");void b.offsetWidth;b.classList.add("shake");status.innerHTML="Das passt nicht. Versuch's nochmal."}
+    };R.appendChild(b)});
+  }
+
+  /* ---------- Self check ---------- */
+  function Self(p){
+    const C=[
+      ["Lernfähigkeit","Aufgaben schnell verstehen und Gelerntes anwenden","Wiederhole neue Arbeitsschritte zu Hause in deinem Kurzbericht. Was du aufschreibst, merkst du dir besser."],
+      ["Interesse & Motivation","Mit Fleiß und Einsatz bei der Sache sein","Such dir jede Woche eine Sache aus, die du im Betrieb neu lernen willst, und sag es deiner Betreuerin oder deinem Betreuer."],
+      ["Eigeninitiative","Selbst Arbeit sehen und anpacken","Wenn du fertig bist: „Wo kann ich noch helfen?“ Dieser Satz wirkt Wunder."],
+      ["Arbeitsqualität","Sorgfältig und vollständig arbeiten","Kontrolliere deine Arbeit am Ende kurz, bevor du sie abgibst."],
+      ["Zuverlässigkeit & Pünktlichkeit","Pünktlich sein und Absprachen einhalten","Plane deinen Weg zum Betrieb mit 10 Minuten Puffer und speichere die Nummer des Betriebs im Handy."],
+      ["Kommunikation","Sich mündlich und schriftlich gut ausdrücken","Übe, dich am Telefon richtig zu melden: Name, Betrieb, Anliegen."],
+      ["Konfliktfähigkeit","Bei Streit ruhig bleiben und Lösungen suchen","Sprich Probleme früh und ruhig an, notfalls mit deiner Praxistag-Lehrkraft."],
+      ["Kritikfähigkeit","Mit Lob und Kritik umgehen","Sag „Danke für den Hinweis“ und frag nach, wie es besser geht."],
+      ["Teamfähigkeit","Gut mit Kolleg*innen zusammenarbeiten","Lern die Namen deiner Kolleg*innen und biete deine Hilfe an."]
+    ];
+    let v=store.get("pt-self",{});
+    p.append(el("div",{class:"panel-head"},'<h3>Selbstcheck: Was kann ich schon?</h3><p>Diese Punkte bewertet dein Betrieb im Beurteilungsbogen.</p>'));
+    const list=el("div",{class:"crit-list"});p.appendChild(list);
+    const out=el("div",{class:"feedback","aria-live":"polite"});p.appendChild(out);
+    C.forEach((c,i)=>{
+      const row=el("div",{class:"crit-row"},'<div><b>'+c[0]+'</b><small>'+c[1]+'</small></div>');
+      const seg=el("div",{class:"seg",role:"group","aria-label":c[0]});
+      [["s3","Kann ich gut",3],["s2","Geht so",2],["s1","Will ich üben",1]].forEach(([cls,lab,val])=>{
+        const b=el("button",{class:cls,type:"button","aria-pressed":String(v[i]===val)},lab);
+        b.onclick=()=>{v[i]=val;store.set("pt-self",v);seg.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed","false"));b.setAttribute("aria-pressed","true");sum()};
+        seg.appendChild(b);
+      });
+      row.appendChild(seg);list.appendChild(row);
+    });
+    function sum(){
+      const n=Object.keys(v).length;
+      if(n<C.length){out.innerHTML="Noch "+(C.length-n)+" von "+C.length+" Punkten offen. Sei ehrlich zu dir, niemand sieht deine Antworten.";return}
+      const strong=C.filter((c,i)=>v[i]===3).map(c=>c[0]);
+      const work=C.map((c,i)=>({c,v:v[i]})).filter(x=>x.v<3).sort((a,b)=>a.v-b.v).slice(0,3);
+      let h="<b>Deine Stärken:</b> "+(strong.length?strong.join(", "):"Die entdeckst du im Praxistag bestimmt noch!");
+      if(work.length)h+='<br><br><b>Deine Tipps für den Start:</b><ul class="tips">'+work.map(x=>"<li><b>"+x.c[0]+":</b> "+x.c[2]+"</li>").join("")+"</ul>";
+      else h+="<br><br>Wow, du fühlst dich überall sicher. Nimm diese Stärken mit ins Halbzeitgespräch!";
+      out.innerHTML=h;markDone("self");
+    }
+    sum();
+  }
+
+  /* ---------- Interests ---------- */
+  function Interests(p){
+    const I=[
+      ["mat","mit Materialien"],["kunst","künstlerisch"],["her","um etwas herzustellen"],["men","mit Menschen"],["frei","im Freien"],
+      ["ber","bedienen und beraten"],["tech","mit Maschinen und Technik"],["verw","in der Verwaltung"],["tier","mit Tieren und Pflanzen"],
+      ["koerp","körperlich"],["hilf","indem man anderen hilft"],["geb","in Gebäuden"]
+    ];
+    const B=[
+      {n:"Handwerk",k:["mat","her","koerp","tech","frei","kunst"],b:"Tischler*in, Kfz-Mechatroniker*in, Elektroniker*in, Friseur*in, Maler*in und Lackierer*in"},
+      {n:"Industrie",k:["tech","her","mat","geb"],b:"Industriemechaniker*in, Mechatroniker*in, Fachkraft für Lagerlogistik, Chemikant*in"},
+      {n:"Handel",k:["ber","men","geb","verw"],b:"Kaufmann/-frau im Einzelhandel, Verkäufer*in, Gestalter*in für visuelles Marketing"},
+      {n:"Gesundheit & Soziales",k:["hilf","men","koerp","geb"],b:"Pflegefachmann/-frau, Medizinische*r Fachangestellte*r, Sozialassistent*in"},
+      {n:"Gastronomie & Hotel",k:["ber","men","her","koerp"],b:"Koch/Köchin, Hotelfachmann/-frau, Fachkraft für Gastronomie"},
+      {n:"Öffentliche Verwaltung & Büro",k:["verw","geb","men","ber"],b:"Verwaltungsfachangestellte*r, Kaufmann/-frau für Büromanagement"},
+      {n:"Landwirtschaft, Gartenbau & Weinbau",k:["tier","frei","koerp","tech"],b:"Gärtner*in, Landwirt*in, Winzer*in, Tierpfleger*in, Forstwirt*in"},
+      {n:"Medien & Gestaltung",k:["kunst","tech","her","geb"],b:"Mediengestalter*in, Fotograf*in, Mediengestalter*in Bild und Ton"}
+    ];
+    let s=new Set(store.get("pt-int",[]));
+    p.append(el("div",{class:"panel-head"},'<h3>Berufe-Finder</h3><p>Ich möchte gern arbeiten … (wähle 3 oder mehr)</p>'));
+    const g=el("div",{class:"int-grid"});p.appendChild(g);
+    const res=el("div",{"aria-live":"polite"});p.appendChild(res);
+    I.forEach(([k,l])=>{const b=el("button",{class:"int",type:"button","aria-pressed":String(s.has(k))},l);b.onclick=()=>{s.has(k)?s.delete(k):s.add(k);store.set("pt-int",[...s]);b.setAttribute("aria-pressed",String(s.has(k)));calc()};g.appendChild(b)});
+    function calc(){
+      if(s.size<3){res.innerHTML='<div class="feedback">Wähle noch '+(3-s.size)+' aus, dann zeige ich dir passende Branchen.</div>';return}
+      const sc=B.map(b=>({b,v:b.k.filter(k=>s.has(k)).length/Math.min(b.k.length,s.size)})).filter(x=>x.v>0).sort((a,b)=>b.v-a.v).slice(0,3);
+      res.innerHTML='<div class="results">'+sc.map(x=>'<div class="res"><b style="font-family:var(--display);font-size:1.1rem">'+x.b.n+'</b><div class="meter"><i style="width:'+Math.round(x.v*100)+'%"></i></div><p>Zum Beispiel: '+x.b.b+'</p></div>').join("")+'</div><div class="feedback">Das sind nur Ideen. Teste dich auch mit der App <a href="https://zukunft-laeuft.bildung-rp.de/app/" target="_blank" rel="noopener">Zukunft läuft</a>. Schau dir die Berufe auf <a href="https://web.arbeitsagentur.de/berufenet/" target="_blank" rel="noopener">BERUFENET</a> genauer an und sprich mit deiner Lehrkraft.</div>';
+      markDone("int");
+    }
+    calc();
+  }
+
+  /* ---------- Generic ordering ---------- */
+  function Order(host,cfg){
+    const items=cfg.items.map((x,i)=>({t:x[0],tip:x[1],i}));
+    let next=0;
+    const bar=el("div",{class:"progress"},"<i></i>");host.appendChild(bar);
+    const wrap=el("div",{class:"order"});
+    const L=el("div",{class:"col"},"<h4>"+cfg.leftLabel+"</h4>"),R=el("div",{class:"col"},"<h4>Deine Reihenfolge</h4>");
+    const placed=el("div",{class:"placed"});R.appendChild(placed);
+    wrap.append(L,R);host.appendChild(wrap);
+    const status=el("div",{class:"feedback","aria-live":"polite"},cfg.start);host.appendChild(status);
+    shuffle(items).forEach(o=>{
+      const b=el("button",{class:"chip",type:"button"},o.t);
+      b.onclick=()=>{
+        if(o.i===next){
+          b.remove();placed.appendChild(el("div",{},"<span>"+o.t+"</span>"));next++;
+          bar.firstChild.style.width=(next/items.length*100)+"%";
+          status.innerHTML="<b>Richtig!</b> "+o.tip;
+          if(next===items.length){status.innerHTML="<b>"+cfg.win+"</b> "+o.tip;cfg.onDone&&cfg.onDone();
+            const r=el("div",{class:"row-end"});const a=el("button",{class:"btn btn-ghost",type:"button"},"Nochmal");a.onclick=()=>renderPanel();r.appendChild(a);host.appendChild(r)}
+        }else{b.classList.remove("shake");void b.offsetWidth;b.classList.add("shake");status.innerHTML="Das kommt später. "+cfg.hint}
+      };
+      L.appendChild(b);
+    });
+  }
+
+  /* ---------- Search ---------- */
+  function Search(p){
+    p.append(el("div",{class:"panel-head"},'<h3>So findest du deinen Praxistag-Platz</h3><p>Tippe die Schritte in der richtigen Reihenfolge an.</p>'));
+    Order(p,{leftLabel:"Schritte (durcheinander)",start:"Womit fängst du an?",hint:"Überleg: Was musst du wissen, bevor du den nächsten Schritt machen kannst?",win:"Geschafft! Das ist dein Fahrplan.",onDone:()=>markDone("search"),items:[
+      ["Interessen und Stärken klären","Die App „Zukunft läuft“ und der Berufe-Finder hier helfen dir dabei."],
+      ["Passende Berufe auswählen","Wähle 2–3 Berufe, damit du einen Plan B hast."],
+      ["Betriebe in der Nähe suchen","Nutze die Praktikumssuche der Arbeitsagentur und frag Familie, Freunde und Nachbarn. Achte auf den Weg: Kommst du pünktlich mit Bus oder Rad hin?"],
+      ["Liste mit 3–5 Betrieben anlegen","Notiere Name, Adresse, Telefonnummer und wenn möglich die Ansprechperson."],
+      ["Im Betrieb anrufen","Frag nach, ob ein Praxistag-Platz frei ist und an wen du die Bewerbung schickst. Übe das in der Übung „Telefonat“ und nutze den Telefon-Leitfaden weiter unten."],
+      ["Anschreiben und Lebenslauf schicken","Lass deine Bewerbung vorher von deiner Lehrkraft oder deinen Eltern lesen."],
+      ["Nachfragen, wenn keine Antwort kommt","Nach etwa einer Woche darfst du freundlich anrufen und nachfragen."],
+      ["Zusage deiner Lehrkraft melden","Bring die Unterlagen für den Betrieb rechtzeitig in die Schule. Erst dann ist alles fest."]
+    ]});
+    p.appendChild(el("div",{class:"feedback"},'<b>Tipp:</b> Bewirb dich bei mehreren Betrieben gleichzeitig. Eine Absage ist normal und hat nichts mit dir als Person zu tun. Links zur Suche findest du <a href="#links">weiter unten</a>.'));
+  }
+
+  /* ---------- Phone call ---------- */
+  function Call(p){
+    const S=[
+      {them:"Autohaus Berger, Sie sprechen mit Frau Krämer. Was kann ich für Sie tun?",
+       a:[["Guten Tag, mein Name ist Lea Schmidt. Ich gehe in die 8. Klasse der Realschule plus Edenkoben und suche einen Platz für den Praxistag.",1,"Perfekt: Gruß, voller Name, Schule und Anliegen in einem Satz."],
+          ["Hi, ich will ein Praktikum machen.",0,"Ohne Gruß und Namen weiß Frau Krämer nicht, wer du bist. Sag zuerst: „Guten Tag, mein Name ist …“"],
+          ["Hallo, hier ist Lea. Habt ihr Praktikum?",0,"Im Betrieb siezt du. Nenn außerdem deinen vollen Namen und erklär, worum es geht."]]},
+      {them:"Ah, der Praxistag. Für welchen Beruf interessieren Sie sich denn?",
+       a:[["Für Kfz-Mechatronikerin. Ich schraube gern am Fahrrad und möchte den Beruf ein ganzes Jahr kennenlernen.",1,"Super: Beruf genannt und kurz begründet. Das zeigt echtes Interesse."],
+          ["Weiß nicht genau, irgendwas.",0,"Das klingt, als wäre es dir egal. Überleg dir vorher, welchen Beruf du willst und warum."],
+          ["Egal, Hauptsache es ist nah an meiner Wohnung.",0,"Der Weg ist wichtig, aber kein guter Grund für den Betrieb. Nenne dein Interesse am Beruf."]]},
+      {them:"Das muss unser Werkstattleiter entscheiden, Herr Yilmaz. Der ist aber gerade nicht da.",
+       a:[["Wann kann ich Herrn Yilmaz am besten erreichen? Dann rufe ich noch einmal an.",1,"Genau richtig: Du bleibst dran und zeigst Eigeninitiative."],
+          ["Okay, tschüss.",0,"Schade, dann ist die Chance vorbei. Frag nach, wann du ihn erreichst."],
+          ["Können Sie nicht einfach Ja sagen?",0,"Das wirkt drängelig. Frau Krämer darf das nicht entscheiden."]]},
+      {them:"Am besten morgen ab 8 Uhr. Sie können uns aber auch gleich eine Bewerbung schicken.",
+       a:[["Sehr gern. An welche E-Mail-Adresse und an wen soll ich die Bewerbung schicken?",1,"Klasse! Mit Adresse und Namen der Ansprechperson kannst du dein Anschreiben persönlich formulieren."],
+          ["Muss ich wirklich eine Bewerbung schreiben?",0,"Eine Bewerbung gehört dazu. Zeig, dass du dir Mühe geben willst."],
+          ["Okay, mach ich.",0,"Dir fehlen jetzt wichtige Infos: An wen und wohin schickst du sie?"]]},
+      {them:"An bewerbung@autohaus-berger.de, zu Händen von Herrn Yilmaz.",
+       a:[["Ich wiederhole: bewerbung@autohaus-berger.de, zu Händen von Herrn Yilmaz. Vielen Dank, Frau Krämer! Auf Wiederhören.",1,"Wiederholen verhindert Tippfehler. Dazu ein freundlicher Abschied: perfekt!"],
+          ["Jo, danke. Bye!",0,"Zu locker. Bedank dich mit Namen und verabschiede dich mit „Auf Wiederhören“."],
+          ["(einfach auflegen)",0,"Ohne Abschied wirkt das unhöflich, und du hast die Adresse nicht überprüft."]]}
+    ];
+    let i=0,score=0;
+    p.append(el("div",{class:"panel-head"},'<h3>Telefonat-Training</h3><p>Du rufst im Autohaus Berger an (Beispielbetrieb). Wähle deine Antwort.</p>'));
+    const bar=el("div",{class:"progress"},"<i></i>");p.appendChild(bar);
+    const call=el("div",{class:"call"});p.appendChild(call);
+    call.appendChild(el("div",{class:"call-head"},'<span class="ring hex">☎</span><span>Anruf bei Autohaus Berger …</span>'));
+    const area=el("div");p.appendChild(area);
+    function step(){
+      bar.firstChild.style.width=(i/S.length*100)+"%";area.innerHTML="";
+      if(i>=S.length){
+        bar.firstChild.style.width="100%";
+        const good=score>=4;
+        area.innerHTML='<div class="score">'+score+' / '+S.length+'</div><p class="lead" style="margin-top:6px">'+(good?"Top! So klingt ein Profi am Telefon.":"Probier es noch einmal. Ab 4 guten Antworten gibt's die Wabe.")+'</p>'+
+          '<div class="feedback"><b>Dein Spickzettel fürs echte Telefonat</b><ul class="cheat"><li>Ruhigen Ort suchen, Stift und Zettel bereitlegen.</li><li>Begrüßung, voller Name, Schule, Klasse, Anliegen.</li><li>Namen der Person am Telefon notieren und benutzen.</li><li>Fragen: Ist ein Platz frei? Wer entscheidet? Wohin schicke ich die Bewerbung?</li><li>Wichtige Infos wiederholen, bedanken, „Auf Wiederhören“.</li><li>Am besten vormittags anrufen, nicht kurz vor Feierabend.</li></ul><p style="margin-top:8px">Den ausführlichen <a href="#telefon">Telefon-Leitfaden mit Anrufliste</a> findest du weiter unten.</p></div>';
+        const r=el("div",{class:"row-end"});const a=el("button",{class:"btn btn-ghost",type:"button"},"Nochmal anrufen");a.onclick=()=>renderPanel();r.appendChild(a);area.appendChild(r);
+        if(good)markDone("call");return;
+      }
+      const s=S[i];
+      call.appendChild(el("div",{class:"bubble them"},'<span class="who">Frau Krämer</span>'+s.them));
+      const opts=el("div",{class:"opts"});
+      shuffle(s.a).forEach(o=>{const b=el("button",{class:"opt",type:"button"},o[0]);b.onclick=()=>{
+        if(o[1])score++;
+        call.appendChild(el("div",{class:"bubble me"},'<span class="who">Du</span>'+o[0]));
+        area.innerHTML="";
+        area.appendChild(el("div",{class:"feedback","aria-live":"polite"},'<b>'+(o[1]?"Gut gemacht! ":"Besser nicht. ")+'</b>'+o[2]));
+        const r=el("div",{class:"row-end"});const nx=el("button",{class:"btn btn-main",type:"button"},i===S.length-1?"Gespräch beenden":"Weiter");nx.onclick=()=>{i++;step()};r.appendChild(nx);area.appendChild(r);nx.focus({preventScroll:true});
+      };opts.appendChild(b)});
+      area.appendChild(opts);
+    }
+    step();
+  }
+
+  /* ---------- Letter ---------- */
+  function Letter(p){
+    p.append(el("div",{class:"panel-head"},'<h3>Dein Anschreiben</h3><p>Teil 1: Bring die Teile eines Anschreibens in die richtige Reihenfolge.</p>'));
+    Order(p,{leftLabel:"Teile (durcheinander)",start:"Was steht ganz oben im Brief?",hint:"Denk an einen Brief: Erst wer schreibt und an wen, dann worum es geht, dann der Text.",win:"Richtig aufgebaut!",onDone:()=>markDone("letter"),items:[
+      ["Absender (dein Name, Adresse, Telefon, E-Mail)","Ganz oben stehen deine Kontaktdaten, damit der Betrieb dich erreichen kann."],
+      ["Empfänger (Betrieb und Ansprechperson)","Den Namen der Ansprechperson hast du im Telefonat erfragt."],
+      ["Ort und Datum","Rechtsbündig über dem Betreff, z. B. „Edenkoben, 2. November 2026“."],
+      ["Betreff","Fett und ohne das Wort „Betreff“, z. B. „Bewerbung um einen Platz für den Praxistag“."],
+      ["Anrede","„Sehr geehrte Frau …“ oder „Sehr geehrter Herr …“. Danach ein Komma, und du schreibst klein weiter."],
+      ["Einleitung: wer du bist und warum du schreibst","Schule, Klasse, Praxistag, Wochentag und Zeitraum."],
+      ["Hauptteil: warum dieser Beruf und deine Stärken","Begründe mit Beispielen: Wo hast du die Stärke schon gezeigt?"],
+      ["Schluss mit Bitte um Rückmeldung","Zum Beispiel: „Über eine Zusage freue ich mich sehr.“"],
+      ["Grußformel und Unterschrift","„Mit freundlichen Grüßen“, ohne Komma, darunter dein Name."]
+    ]});
+
+    p.appendChild(el("div",{class:"sub-h"},"Teil 2: Schreib dein eigenes Anschreiben"));
+    p.appendChild(el("p",{style:"color:var(--muted);margin-top:4px"},"Füll die Felder aus. Rechts entsteht dein Brief. Deine Eingaben bleiben nur auf diesem Gerät."));
+    const F=[
+      {legend:"Über dich",f:[["vn","Vorname und Nachname","Lea Schmidt"],["str","Straße und Hausnummer","Weinstraße 12"],["ort","PLZ und Wohnort","67480 Edenkoben"],["kon","Telefon und E-Mail","0151 2345678 · lea.schmidt@mail.de"]]},
+      {legend:"Schule und Praxistag",f:[["sch","Schule","Realschule plus Edenkoben"],["kl","Klasse","8a"],["wt","Wochentag",null,["Montag","Dienstag","Mittwoch","Donnerstag","Freitag"]],["ab","Start (Monat und Jahr)","Februar 2027"]]},
+      {legend:"Der Betrieb",f:[["be","Name des Betriebs","Autohaus Berger"],["anr","Anrede",null,["Herr","Frau","unbekannt"]],["an","Nachname der Ansprechperson","Yilmaz"],["bstr","Straße und Hausnummer","Bahnhofstraße 5"],["bort","PLZ und Ort","67480 Edenkoben"],["beruf","Beruf","Kfz-Mechatroniker*in"]]},
+      {legend:"Dein Text",f:[["tel","Hast du vorher angerufen?",null,["ja","nein"]],["warum","Warum interessiert dich der Beruf? (1–2 Sätze)","Ich repariere in meiner Freizeit gern Fahrräder und möchte wissen, wie moderne Autos funktionieren.",null,true]]}
+    ];
+    const ST=["zuverlässig","pünktlich","hilfsbereit","handwerklich geschickt","freundlich","teamfähig","sorgfältig","kreativ","belastbar","gut in Mathe","offen für Neues","gern mit Menschen zusammen"];
+    let d=store.get("pt-letter",{wt:"Mittwoch",anr:"Herr",tel:"ja",st:[]});if(!d.st)d.st=[];
+    const grid=el("div",{class:"letter-grid"});const form=el("form",{class:"form"});const paper=el("div",{class:"paper","aria-live":"polite"});
+    form.addEventListener("submit",e=>e.preventDefault());
+    F.forEach(g=>{
+      const fs=el("fieldset");fs.appendChild(el("legend",{},g.legend));
+      let row=null;
+      g.f.forEach(([k,lab,ph,opts,ta],idx)=>{
+        const L=el("label",{for:"lt-"+k});L.appendChild(document.createTextNode(lab));
+        let inp;
+        if(opts){inp=el("select",{id:"lt-"+k});opts.forEach(o=>{const op=el("option",{value:o},o);inp.appendChild(op)});inp.value=d[k]||opts[0]}
+        else if(ta){inp=el("textarea",{id:"lt-"+k,placeholder:"z. B. "+ph})}
+        else{inp=el("input",{id:"lt-"+k,type:"text",placeholder:"z. B. "+ph,autocomplete:"off"})}
+        if(!opts&&d[k])inp.value=d[k];
+        inp.addEventListener("input",()=>{d[k]=inp.value;save()});
+        L.appendChild(inp);fs.appendChild(L);
+      });
+      form.appendChild(fs);
+    });
+    const sfs=el("fieldset");sfs.appendChild(el("legend",{},"Deine Stärken (wähle 2–3)"));const sw=el("div",{class:"strengths"});
+    ST.forEach(t=>{const b=el("button",{class:"int",type:"button","aria-pressed":String(d.st.includes(t))},t);b.onclick=()=>{const i=d.st.indexOf(t);i>=0?d.st.splice(i,1):d.st.push(t);b.setAttribute("aria-pressed",String(d.st.includes(t)));save()};sw.appendChild(b)});
+    sfs.appendChild(sw);form.appendChild(sfs);
+    const actions=el("div",{class:"row-end",style:"justify-content:flex-start"});
+    const copy=el("button",{class:"btn btn-main",type:"button"},"Text kopieren");
+    const clear=el("button",{class:"btn btn-ghost",type:"button"},"Felder leeren");
+    actions.append(copy,clear);form.appendChild(actions);
+    grid.append(form,paper);p.appendChild(grid);
+    p.appendChild(el("div",{class:"feedback"},"<b>Bevor du abschickst:</b> Schreib den Brief am Computer, prüf Rechtschreibung und Namen, und lass ihn von deiner Lehrkraft lesen. Schick ihn zusammen mit deinem Lebenslauf. Bei einer E-Mail hängst du beides als PDF an."));
+
+    const esc=t=>String(t).replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+    const v=(k,ph)=>d[k]&&d[k].trim()?esc(d[k].trim()):"<mark>"+ph+"</mark>";
+    const join=a=>a.length<=1?a.join(""):a.slice(0,-1).join(", ")+" und "+a[a.length-1];
+    function build(){
+      const today=new Date().toLocaleDateString("de-DE",{day:"numeric",month:"long",year:"numeric"});
+      const wohnort=(d.ort||"").replace(/^\s*\d{4,5}\s*/,"").trim();
+      let anrede;
+      if(d.anr==="Herr")anrede="Sehr geehrter Herr "+v("an","Nachname")+",";
+      else if(d.anr==="Frau")anrede="Sehr geehrte Frau "+v("an","Nachname")+",";
+      else anrede="Sehr geehrte Damen und Herren,";
+      const zh=d.anr==="unbekannt"?"":"\n"+(d.anr==="Frau"?"Frau ":"Herrn ")+v("an","Nachname");
+      const telSatz=d.tel==="ja"?"vielen Dank für das freundliche Telefonat. Wie besprochen sende ich Ihnen meine Bewerbung. ":"";
+      const einl=(telSatz?telSatz+"Ich":"ich")+" besuche die Klasse "+v("kl","Klasse")+" der "+v("sch","Schule")+". Ab "+v("ab","Monat Jahr")+" nehme ich am Praxistag teil und arbeite dann jeden "+esc(d.wt||"Mittwoch")+" in einem Betrieb. Ich möchte meinen Praxistag gern bei "+v("be","Betrieb")+" im Beruf "+v("beruf","Beruf")+" machen.";
+      const st=d.st.length?"Meine Stärken: Ich bin "+esc(join(d.st))+".":"<mark>Meine Stärken: Ich bin …</mark>";
+      return v("vn","Vorname Nachname")+"\n"+v("str","Straße Nr.")+"\n"+v("ort","PLZ Ort")+"\n"+v("kon","Telefon · E-Mail")+"\n\n"+
+        v("be","Name des Betriebs")+zh+"\n"+v("bstr","Straße Nr.")+"\n"+v("bort","PLZ Ort")+"\n\n"+
+        '<span style="display:block;text-align:right">'+(wohnort?esc(wohnort):"<mark>Wohnort</mark>")+", "+today+"</span>\n"+
+        '<span class="subj">Bewerbung um einen Platz für den Praxistag als '+v("beruf","Beruf")+"</span>\n\n"+
+        anrede+"\n\n"+einl+"\n\n"+v("warum","Warum dich der Beruf interessiert")+" "+st+" Im Praxistag möchte ich zeigen, dass ich mit anpacke und viel lernen will.\n\n"+
+        "Über eine Zusage oder eine Einladung zu einem Kennenlerngespräch freue ich mich sehr.\n\nMit freundlichen Grüßen\n\n"+v("vn","Vorname Nachname")+"\n\nAnlage: Lebenslauf";
+    }
+    function render(){paper.innerHTML=build()}
+    function save(){store.set("pt-letter",d);render()}
+    copy.onclick=()=>{
+      const tmp=document.createElement("div");tmp.innerHTML=build();const txt=tmp.textContent;
+      const ok=()=>{copy.textContent="Kopiert!";setTimeout(()=>copy.textContent="Text kopieren",1600)};
+      const sel=()=>{const r=document.createRange();r.selectNodeContents(paper);const s=getSelection();s.removeAllRanges();s.addRange(r);copy.textContent="Text markiert";setTimeout(()=>copy.textContent="Text kopieren",1600)};
+      try{navigator.clipboard.writeText(txt).then(ok,sel)}catch(e){sel()}
+    };
+    let armed=false;
+    clear.onclick=()=>{if(!armed){armed=true;clear.textContent="Wirklich leeren?";setTimeout(()=>{armed=false;clear.textContent="Felder leeren"},3000);return}
+      d={wt:"Mittwoch",anr:"Herr",tel:"ja",st:[]};store.set("pt-letter",d);renderPanel()};
+    render();
+  }
+
+
+  /* ---------- Phone guide ---------- */
+  (function(){
+    const rows=$("#callRows");let L=store.get("pt-calls",[]);
+    const R=["","noch offen","später nochmal anrufen","Bewerbung schicken","Vorstellungstermin","Zusage","Absage"];
+    for(let i=0;i<6;i++){
+      const d=L[i]||{};const tr=document.createElement("tr");
+      tr.innerHTML='<td class="n">'+(i+1)+'</td>';
+      [["b","z. B. Autohaus Berger"],["t","Telefonnummer"],["a","Name"],["d","TT.MM."],["r",null],["n","z. B. Mi 9 Uhr anrufen"]].forEach(([k,ph])=>{
+        const td=document.createElement("td");let inp;
+        if(k==="r"){inp=document.createElement("select");R.forEach(o=>{const op=document.createElement("option");op.value=o;op.textContent=o||"bitte wählen";inp.appendChild(op)})}
+        else{inp=document.createElement("input");inp.type="text";inp.placeholder=ph;inp.autocomplete="off"}
+        inp.id="call-"+i+"-"+k;inp.setAttribute("aria-label",{b:"Betrieb",t:"Telefon",a:"Ansprechperson",d:"Datum",r:"Ergebnis",n:"Nächster Schritt"}[k]+" "+(i+1));
+        inp.value=d[k]||"";
+        inp.addEventListener("input",()=>{L[i]=L[i]||{};L[i][k]=inp.value;store.set("pt-calls",L)});
+        td.appendChild(inp);tr.appendChild(td);
+      });
+      rows.appendChild(tr);
+    }
+    const btn=$("#guideCopy");
+    btn.onclick=()=>{
+      const sec=document.getElementById("telefon");const parts=[];
+      sec.querySelectorAll("h2, .guide-box h3, .guide-box li, .ifthen div, .gsteps h4").forEach(e=>{});
+      const T=x=>{const c=x.cloneNode(true);c.querySelectorAll(".ph").forEach(e=>e.textContent="["+e.textContent+"]");return c.textContent.trim()};
+      let t="TELEFON-LEITFADEN FÜR DIE PRAKTIKUMSSUCHE\nRealschule plus Edenkoben · Praxistag\n\nVOR DEM ANRUF\n";
+      sec.querySelectorAll(".guide-box:first-child li").forEach(li=>t+="- "+li.textContent.trim()+"\n");
+      t+="\nDAS GESPRÄCH SCHRITT FÜR SCHRITT\n";
+      sec.querySelectorAll(".gsteps>li").forEach((li,i)=>{t+="\n"+(i+1)+". "+li.querySelector("h4").textContent+"\n";li.querySelectorAll(".say, p").forEach(x=>{const pre=x.classList.contains("say")?(x.classList.contains("ask")?"   Du fragst: ":"   Du sagst: "):"   ";t+=pre+T(x)+"\n"})});
+      t+="\nWAS TUN, WENN …\n";
+      sec.querySelectorAll(".ifthen div").forEach(dv=>{t+="\n"+dv.querySelector("b").textContent+"\n";dv.querySelectorAll("p, .say").forEach(x=>t+="   "+T(x)+"\n")});
+      t+="\nNOTIZEN\nBetrieb: ____________  Telefon: ____________\nAnsprechperson: ____________  Datum/Uhrzeit: ____________\nErgebnis: ____________________________\nNächster Schritt: ______________________\n\nHilfe: Übergangscoach (mittwochs und donnerstags), Herr Fischer, Herr Eberhardt (WebUntis)\n";
+      const ok=()=>{btn.textContent="Kopiert!";setTimeout(()=>btn.textContent="Leitfaden als Text kopieren",1600)};
+      const sel=()=>{const r=document.createRange();r.selectNodeContents(sec);const s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent="Text markiert";setTimeout(()=>btn.textContent="Leitfaden als Text kopieren",1600)};
+      try{navigator.clipboard.writeText(t).then(ok,sel)}catch(e){sel()}
+    };
+  })();
+
+  /* ---------- Checklist ---------- */
+  const CL=[
+    {h:"Vorbereitung",c:"var(--purple)",i:["Titelblatt passend zu Beruf oder Betrieb","Unterlagen aus den vorbereitenden Workshops"]},
+    {h:"Vom Betrieb",c:"var(--red)",i:["Beurteilungsbogen des Betriebs (Vorpraktikum)","Anwesenheits- und Arbeitszeitnachweis","Beurteilung pro Monat"]},
+    {h:"Betrieb & Beruf",c:"var(--blue)",i:["Mein Praxistagbetrieb","Branche und Tätigkeiten","Steckbrief: Mein Praxistagberuf","Fähigkeiten im Beruf","Mein erster Tag"]},
+    {h:"Berichte",c:"#E08600",i:["Kurzberichte (einer pro Tag, in Stichworten)","Zwei ausführliche Tagesberichte","Mein Arbeitsplatz","Zwei Arbeitsvorgänge deiner Wahl","Drei weitere ausführliche Tagesberichte","Werkstück, Fotos oder Material aus dem Betrieb"]},
+    {h:"Beruf genauer",c:"var(--green)",i:["Sammlung von Fachausdrücken","Berufliche Anforderungen","Einstellungsvoraussetzungen"]},
+    {h:"Halbzeitgespräch",c:"var(--muted)",i:["Vorbereitungsbogen Halbzeitgespräch ausgefüllt"]}
+  ];
+  let ck=store.get("pt-check",{});
+  function renderChecklist(){
+    const g=$("#checkGrid");g.innerHTML="";let total=0;
+    CL.forEach((grp,gi)=>{
+      const box=el("div",{class:"check-group"},'<h3><span class="hex" style="background:'+grp.c+'"></span>'+grp.h+'</h3>');
+      grp.i.forEach((t,ii)=>{total++;const id="ck-"+gi+"-"+ii;const lab=el("label",{for:id});const inp=el("input",{type:"checkbox",id});inp.checked=!!ck[id];
+        inp.onchange=()=>{ck[id]=inp.checked;store.set("pt-check",ck);count()};lab.append(inp,el("span",{},t));box.appendChild(lab)});
+      g.appendChild(box);
+    });
+    function count(){const n=Object.values(ck).filter(Boolean).length;$("#checkCount").textContent=n+" / "+total;$("#checkBar").style.width=(n/total*100)+"%"}
+    count();
+  }
+  let resetArmed=false;
+  $("#checkReset").onclick=e=>{const b=e.currentTarget;if(!resetArmed){resetArmed=true;b.textContent="Wirklich alles löschen?";setTimeout(()=>{resetArmed=false;b.textContent="Zurücksetzen"},3000);return}
+    resetArmed=false;b.textContent="Zurücksetzen";ck={};store.set("pt-check",ck);renderChecklist()};
+
+  /* ---------- Copy ---------- */
+  document.querySelectorAll("[data-copy]").forEach(b=>b.onclick=()=>{
+    const t=document.getElementById(b.dataset.copy);const txt=t.textContent;
+    const ok=()=>{b.textContent="Kopiert";setTimeout(()=>b.textContent="Kopieren",1500)};
+    const sel=()=>{const r=document.createRange();r.selectNodeContents(t);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent="Markiert";setTimeout(()=>b.textContent="Kopieren",1500)};
+    try{navigator.clipboard.writeText(txt).then(ok,sel)}catch(e){sel()}
+  });
+
+  renderBadge();renderTabs();renderPanel();renderChecklist();
+})();
+</script>
+</body>
+</html>
