@@ -21,6 +21,7 @@ img{max-width:100%}
   --orange:#F39200; --red:#C0182A; --blue:#1A7FC1; --green:#3E9B24; --purple:#5D2466;
   --orange-ink:#A85F00; --on-accent:#FFFFFF;
   --ok:#2E8A1E; --bad:#C0182A;
+  --ok-c:#1E8A3C; --warn-c:#F2A900; --no-c:#8A8290;
   --display:"Bricolage Grotesque", "Arial Rounded MT Bold", system-ui, sans-serif;
   --body:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
   --hand:"Kalam", "Comic Sans MS", cursive;
@@ -29,11 +30,11 @@ img{max-width:100%}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#17131B; --surface:#221C27; --surface-2:#2C2532; --fg:#F4EFF6; --muted:#B8AFBD; --line:#3A3240;
   --orange:#FFA826; --red:#FF5A67; --blue:#4CB0F0; --green:#72CF52; --purple:#C27CCF;
-  --orange-ink:#FFB84D; --on-accent:#17131B; --ok:#72CF52; --bad:#FF6B76; color-scheme:dark}}
+  --orange-ink:#FFB84D; --on-accent:#17131B; --ok:#72CF52; --bad:#FF6B76; --ok-c:#2FA84F; --warn-c:#F2B300; --no-c:#6E6675; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#17131B; --surface:#221C27; --surface-2:#2C2532; --fg:#F4EFF6; --muted:#B8AFBD; --line:#3A3240;
   --orange:#FFA826; --red:#FF5A67; --blue:#4CB0F0; --green:#72CF52; --purple:#C27CCF;
-  --orange-ink:#FFB84D; --on-accent:#17131B; --ok:#72CF52; --bad:#FF6B76; color-scheme:dark}
+  --orange-ink:#FFB84D; --on-accent:#17131B; --ok:#72CF52; --bad:#FF6B76; --ok-c:#2FA84F; --warn-c:#F2B300; --no-c:#6E6675; color-scheme:dark}
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:72px}
@@ -259,6 +260,63 @@ section{padding-block:clamp(48px,8vw,88px)}
 .calls td.n{font-family:var(--display);font-weight:800;color:var(--muted);text-align:center;padding-top:12px;width:32px}
 .guide-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 @media (max-width:820px){.guide-grid{grid-template-columns:1fr}}
+/* Wegweiser */
+.ww{background:var(--surface);border:2px solid var(--purple);border-radius:22px;padding:clamp(18px,4vw,30px);margin-bottom:34px;display:grid;gap:20px}
+.ww-head{display:flex;gap:14px;align-items:flex-start}
+.ww-ic{width:44px;height:38px;flex:none;background:var(--purple)}
+.ww-head h3{font-size:clamp(1.3rem,3vw,1.6rem)}
+.ww-head p{color:var(--muted);margin-top:4px;max-width:70ch}
+.ww-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:22px;align-items:start}
+.ww-col{display:grid;gap:10px;min-width:0;align-content:start}
+.ww-col h4{margin:0;font-family:var(--display);font-size:1.1rem}
+.ww-col h4 small{font-family:var(--body);font-weight:600;color:var(--muted);font-size:.85rem}
+.ww-grades{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px}
+.ww-row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 8px 6px 12px;border-radius:10px;background:var(--surface-2);font-size:.93rem;font-weight:600}
+.ww-row.core{box-shadow:inset 3px 0 0 var(--purple)}
+.ww-row select{font:inherit;font-weight:800;border:2px solid var(--line);border-radius:8px;background:var(--surface);padding:3px 6px;min-width:52px;text-align:center}
+.ww-row select.g1,.ww-row select.g2{border-color:var(--green)}
+.ww-row select.g5,.ww-row select.g6{border-color:var(--red);background:color-mix(in srgb,var(--red) 10%,var(--surface))}
+.ww-actions{display:flex;gap:8px;flex-wrap:wrap}
+.ww-q{display:block;font-weight:700;font-size:.95rem;margin-bottom:4px}
+.ww-seg{border-radius:14px;flex-wrap:wrap}
+.ww-seg button[aria-pressed="true"]{background:var(--purple);color:#fff}
+.ww-empty{border-radius:14px;padding:14px 16px;background:var(--surface-2);color:var(--muted)}
+.ww-sum{display:grid;grid-template-columns:1.2fr 1fr;gap:12px}
+.ww-badge{border-radius:14px;padding:14px 16px;background:var(--surface-2);display:grid;gap:4px}
+.ww-badge b{font-family:var(--display);font-size:1.1rem}
+.ww-badge span{color:var(--muted);font-size:.95rem}
+.ww-badge.ok{background:color-mix(in srgb,var(--ok-c) 14%,var(--surface));box-shadow:inset 0 0 0 2px var(--ok-c)}
+.ww-badge.warn{background:color-mix(in srgb,var(--warn-c) 18%,var(--surface));box-shadow:inset 0 0 0 2px var(--warn-c)}
+.ww-badge.bad{background:color-mix(in srgb,var(--red) 12%,var(--surface));box-shadow:inset 0 0 0 2px var(--red)}
+.ww-stats{display:flex;flex-wrap:wrap;gap:8px;align-content:start}
+.ww-stats span{border-radius:12px;padding:8px 12px;background:var(--surface-2);font-size:.85rem;color:var(--muted);display:grid}
+.ww-stats b{font-family:var(--display);font-size:1.3rem;color:var(--fg);font-variant-numeric:tabular-nums}
+.ww-top{border-radius:16px;padding:16px 18px;background:var(--purple);color:#fff;display:grid;gap:4px}
+.ww-top b{font-family:var(--display);font-size:1.35rem}
+.ww-top .ww-path{color:#fff;opacity:.9}
+.ww-tag{font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.85}
+.ww-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.ww-card{border-radius:14px;overflow:hidden;display:grid;gap:6px;align-content:start;padding:0 0 14px;border:2px solid transparent}
+.ww-card>*:not(.ww-st){margin-inline:14px}
+.ww-st{display:block;padding:6px 14px;font-size:.8rem;font-weight:800;letter-spacing:.03em;text-transform:uppercase}
+.ww-card.s-ja{background:color-mix(in srgb,var(--ok-c) 12%,var(--surface));border-color:var(--ok-c)}
+.ww-card.s-ja .ww-st{background:var(--ok-c);color:#fff}
+.ww-card.s-bed{background:color-mix(in srgb,var(--warn-c) 16%,var(--surface));border-color:var(--warn-c)}
+.ww-card.s-bed .ww-st{background:var(--warn-c);color:#1E1A22}
+.ww-card.s-nein{background:var(--surface-2);border-color:var(--line)}
+.ww-card.s-nein .ww-st{background:var(--no-c);color:#fff}
+.ww-card.s-nein b,.ww-card.s-nein p{color:var(--muted)}
+.ww-card.best{box-shadow:0 0 0 3px var(--purple)}
+.ww-ct b{font-family:var(--display);font-size:1.05rem}
+.ww-card p{font-size:.92rem;color:var(--fg)}
+.ww-fit{font-size:.8rem;color:var(--purple);font-weight:700;letter-spacing:.05em}
+.ww-fit i{font-style:normal;color:var(--line)}
+.ww-path{font-size:.8rem;font-weight:600;color:var(--muted)}
+.ww-legend{display:flex;gap:8px;flex-wrap:wrap;font-size:.8rem;font-weight:800}
+.ww-legend span{border-radius:999px;padding:3px 10px}
+.l-ja{background:var(--ok-c);color:#fff}.l-bed{background:var(--warn-c);color:#1E1A22}.l-nein{background:var(--no-c);color:#fff}
+@media (max-width:820px){.ww-grid,.ww-sum{grid-template-columns:1fr}}
+@media (max-width:420px){.ww-grades{grid-template-columns:1fr}}
 /* Perspectives */
 .paths{display:grid;grid-template-columns:auto 1fr;gap:18px 22px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:clamp(18px,4vw,30px)}
 .paths .start{grid-row:span 2;width:120px;height:104px;display:grid;place-items:center;text-align:center;background:var(--purple);color:#fff;font-family:var(--display);font-weight:800;font-size:1rem;line-height:1.15;padding:10px}
@@ -536,6 +594,43 @@ footer img{height:44px;background:#fff;border-radius:8px;padding:4px 8px}
       <span class="eyebrow">Dein Weg nach der 9. Klasse</span>
       <h2>Nach dem Praxistag: Wie geht es weiter?</h2>
       <p class="lead">Mit der Berufsreife hast du mehrere Möglichkeiten. Der Praxistag hilft dir herauszufinden, welcher Weg zu dir passt.</p>
+    </div>
+
+    <div class="ww" id="wegweiser">
+      <div class="ww-head">
+        <span class="hex ww-ic" aria-hidden="true"></span>
+        <div><h3>Wegweiser: Welcher Weg passt zu mir?</h3>
+        <p>Trag deine Noten aus dem letzten Zeugnis ein und sag, was dir liegt. Der Wegweiser prüft nach den Regeln in Rheinland-Pfalz, welche Abschlüsse und Wege für dich möglich sind. Deine Eingaben bleiben nur auf diesem Gerät.</p></div>
+      </div>
+      <div class="ww-grid">
+        <div class="ww-col">
+          <h4>1. Deine Noten <small>(Berufsreifeklasse 9)</small></h4>
+          <div class="ww-grades" id="wwGrades"></div>
+          <div class="ww-actions"><button type="button" class="mini-btn" id="wwExample">Beispiel ausprobieren</button><button type="button" class="mini-btn" id="wwClear">Alles leeren</button></div>
+        </div>
+        <div class="ww-col">
+          <h4>2. Was passt zu dir?</h4>
+          <div class="ww-scale">
+            <span class="ww-q">Lieber lernen oder lieber arbeiten?</span>
+            <div class="seg ww-seg" role="group" aria-label="Lieber lernen oder arbeiten" id="wwLearn">
+              <button type="button" data-v="schule">Ich lerne gern in der Schule</button>
+              <button type="button" data-v="beides">Beides okay</button>
+              <button type="button" data-v="arbeit">Ich will lieber arbeiten</button>
+            </div>
+          </div>
+          <span class="ww-q">Was trifft auf dich zu? (mehrere möglich)</span>
+          <div class="int-grid" id="wwInt">
+            <button type="button" class="int" data-k="handwerk" aria-pressed="false">Ich arbeite gern handwerklich</button>
+            <button type="button" class="int" data-k="menschen" aria-pressed="false">Ich helfe gern anderen Menschen</button>
+            <button type="button" class="int" data-k="buero" aria-pressed="false">Ich arbeite gern am PC / im Büro</button>
+            <button type="button" class="int" data-k="unsicher" aria-pressed="false">Ich weiß noch nicht, was ich werden will</button>
+            <button type="button" class="int" data-k="platz" aria-pressed="false">Ich habe ein Ausbildungsangebot / mein Betrieb will mich übernehmen</button>
+            <button type="button" class="int" data-k="studium" aria-pressed="false">Ich möchte später vielleicht studieren</button>
+          </div>
+        </div>
+      </div>
+      <div id="wwResult" aria-live="polite"></div>
+      <p class="stand">Der Wegweiser rechnet nach der Übergreifenden Schulordnung Rheinland-Pfalz (§ 74 Berufsreife, § 25 Wechsel in den Bildungsgang qualifizierter Sekundarabschluss I) und den Aufnahmeregeln der berufsbildenden Schulen. Er ersetzt keine Beratung: Über Abschlüsse und Wechsel entscheidet die Klassenkonferenz. Sprich mit deiner Klassenleitung, Frau Fuchs oder Frau Lemcke, oder mit dem Übergangscoach.</p>
     </div>
 
     <div class="paths paths-c" aria-label="Wege nach der Berufsreife">
@@ -1114,6 +1209,143 @@ footer img{height:44px;background:#fff;border-radius:8px;padding:4px 8px}
       const sel=()=>{const r=document.createRange();r.selectNodeContents(sec);const s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent="Text markiert";setTimeout(()=>btn.textContent="Leitfaden als Text kopieren",1600)};
       try{navigator.clipboard.writeText(t).then(ok,sel)}catch(e){sel()}
     };
+  })();
+
+  /* ---------- Wegweiser ---------- */
+  (function(){
+    const root=document.getElementById("wegweiser");if(!root)return;
+    const SUBJ=[
+      ["d","Deutsch",1],["m","Mathematik",1],["e","Englisch",1],["wpf","Wahlpflichtfach",1],
+      ["rel","Religion / Ethik"],["gl","Erdkunde / Geschichte / Sozialkunde"],["nawi","Biologie / Chemie / Physik"],
+      ["mu","Musik"],["bk","Bildende Kunst"],["sp","Sport"]
+    ];
+    const NAMES=["","sehr gut","gut","befriedigend","ausreichend","mangelhaft","ungenügend"];
+    let st=store.get("pt-ww",{g:{},learn:"",int:[]});if(!st.g)st.g={};if(!st.int)st.int=[];
+    const save=()=>{store.set("pt-ww",st);evaluate()};
+    const gWrap=document.getElementById("wwGrades");
+    SUBJ.forEach(([k,label,core])=>{
+      const id="ww-"+k;const row=el("label",{class:"ww-row"+(core?" core":""),for:id},'<span>'+label+'</span>');
+      const s=el("select",{id});
+      [["","–"],["1","1"],["2","2"],["3","3"],["4","4"],["5","5"],["6","6"]].forEach(([v,t])=>{const o=el("option",{value:v},t);s.appendChild(o)});
+      s.value=st.g[k]||"";s.onchange=()=>{st.g[k]=s.value;s.className="g"+s.value;save()};s.className="g"+s.value;
+      row.appendChild(s);gWrap.appendChild(row);
+    });
+    const learnBtns=[...document.querySelectorAll("#wwLearn button")];
+    const syncLearn=()=>learnBtns.forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.v===st.learn)));
+    learnBtns.forEach(b=>b.onclick=()=>{st.learn=st.learn===b.dataset.v?"":b.dataset.v;syncLearn();save()});syncLearn();
+    const intBtns=[...document.querySelectorAll("#wwInt .int")];
+    const syncInt=()=>intBtns.forEach(b=>b.setAttribute("aria-pressed",String(st.int.includes(b.dataset.k))));
+    intBtns.forEach(b=>b.onclick=()=>{const i=st.int.indexOf(b.dataset.k);i>=0?st.int.splice(i,1):st.int.push(b.dataset.k);syncInt();save()});syncInt();
+    const setAll=()=>{SUBJ.forEach(([k])=>{const s=document.getElementById("ww-"+k);s.value=st.g[k]||"";s.className="g"+s.value});syncLearn();syncInt();save()};
+    document.getElementById("wwExample").onclick=()=>{st={g:{d:"3",m:"4",e:"3",wpf:"2",rel:"2",gl:"3",nawi:"3",mu:"2",bk:"3",sp:"1"},learn:"beides",int:["handwerk"]};setAll()};
+    let armed=false;const clr=document.getElementById("wwClear");
+    clr.onclick=()=>{if(!armed){armed=true;clr.textContent="Wirklich leeren?";setTimeout(()=>{armed=false;clr.textContent="Alles leeren"},3000);return}armed=false;clr.textContent="Alles leeren";st={g:{},learn:"",int:[]};setAll()};
+
+    const trunc1=x=>Math.floor(x*10+1e-9)/10;
+    const fmtN=x=>x.toFixed(1).replace(".",",");
+    function canComp(g,pool){ // pool: array of grades available; returns used indices or null
+      const ok=pool.map((v,i)=>[v,i]).sort((a,b)=>a[0]-b[0]);
+      if(g===5){const one=ok.find(([v])=>v<=2);if(one)return [one[1]];const t=ok.filter(([v])=>v<=3);if(t.length>=2)return [t[0][1],t[1][1]];return null}
+      if(g===6){const one=ok.find(([v])=>v===1);if(one)return [one[1]];const t=ok.filter(([v])=>v<=2);if(t.length>=2)return [t[0][1],t[1][1]];return null}
+      return [];
+    }
+    function berufsreife(G){
+      const entered=SUBJ.filter(([k])=>G[k]);
+      if(entered.length<6)return {state:"offen",text:"Trag noch mindestens zwei weitere Fächer ein."};
+      const under=entered.filter(([k])=>G[k]>=5);
+      const nm=k=>SUBJ.find(s=>s[0]===k)[1];
+      if(!under.length)return {state:"ja",text:"Alle Fächer mindestens 4."};
+      if(under.length>3)return {state:"nein",text:"Mehr als drei Fächer unter 4 – kein Ausgleich möglich."};
+      const dm=G.d>=5&&G.m>=5;
+      if(dm){
+        const pool=["e","wpf"].filter(k=>G[k]&&G[k]<=4).map(k=>G[k]);
+        const c=canComp(Math.min(G.d,G.m),pool);
+        if(!c)return {state:"nein",text:"Deutsch und Mathe unter 4 – Englisch oder WPF reichen zum Ausgleich nicht."};
+        return {state:"ausgleich",text:"Deutsch und Mathe unter 4 – Ausgleich über Englisch oder WPF."};
+      }
+      if(under.length===3){
+        const pool=entered.filter(([k])=>G[k]<=4).map(([k])=>G[k]);
+        const c=canComp(Math.min(...under.map(([k])=>G[k])),pool);
+        if(!c)return {state:"nein",text:"Drei Fächer unter 4 – zu wenig gute Noten zum Ausgleich."};
+        return {state:"ausgleich",text:"Drei Fächer unter 4 – eins wird ausgeglichen."};
+      }
+      return {state:"ja",text:under.map(([k])=>nm(k)).join(", ")+" unter 4 – ist erlaubt."};
+    }
+    function evaluate(){
+      const out=document.getElementById("wwResult");
+      const G={};SUBJ.forEach(([k])=>{if(st.g[k])G[k]=+st.g[k]});
+      const coreK=["d","m","e","wpf"];const coreOk=coreK.every(k=>G[k]);
+      const others=SUBJ.filter(([k,,c])=>!c&&G[k]).map(([k])=>G[k]);
+      const all=Object.values(G);
+      if(!coreOk){out.innerHTML='<div class="ww-empty"><b>So geht’s:</b> Trag zuerst Deutsch, Mathe, Englisch und dein Wahlpflichtfach ein (1 = sehr gut … 6 = ungenügend). Oder klick auf „Beispiel ausprobieren“.</div>';return}
+      const br=berufsreife(G);
+      const avgCore=trunc1(coreK.reduce((a,k)=>a+G[k],0)/4);
+      const avgOther=others.length?trunc1(others.reduce((a,b)=>a+b,0)/others.length):null;
+      const avgAll=trunc1(all.reduce((a,b)=>a+b,0)/all.length);
+      const dem=["d","e","m"].filter(k=>G[k]<=3).length;
+      const sek1=avgCore<=2.5&&avgOther!==null&&avgOther<=3.0&&br.state!=="nein";
+      const brOk=br.state==="ja"||br.state==="ausgleich";
+      const bf2=avgAll<=3.0&&dem>=2;
+      const I=k=>st.int.includes(k);const L=st.learn;
+      const P=[];
+      const add=(o)=>P.push(o);
+      // fit scores 0..3
+      add({id:"klasse10",t:"Klasse 10 (Mittlere Reife)",
+        s:sek1?"ja":(brOk&&avgCore<=3.0?"bed":"nein"),
+        why:sek1?"Deine Noten reichen für den Wechsel in Klasse 10.":"Nötig: D/M/E/WPF Ø 2,5 (du: "+fmtN(avgCore)+"), Rest Ø 3,0 (du: "+(avgOther===null?"–":fmtN(avgOther))+").",
+        fit:(L==="schule"?3:L==="beides"?2:0)+(I("studium")?2:0)+(I("buero")?1:0),
+        path:"Kl. 9 → Kl. 10 → Mittlere Reife"});
+      add({id:"ausbildung",t:"Duale Ausbildung",
+        s:brOk?"ja":"nein",
+        why:brOk?"Direkt möglich. Mittlere Reife in der Berufsschule nachholbar.":"Braucht meist die Berufsreife.",
+        fit:(L==="arbeit"?3:L==="beides"?2:0)+(I("platz")?3:0)+(I("handwerk")?1:0)+(I("menschen")?1:0)+(I("buero")?1:0),
+        path:"Kl. 9 → Ausbildung (2–3½ J.) → Beruf"});
+      add({id:"bf1",t:"Berufsfachschule I",
+        s:brOk?"ja":"nein",
+        why:brOk?"1 Jahr Schule mit Praktikum – gut zum Ausprobieren.":"Braucht die Berufsreife.",
+        fit:(L==="schule"?2:L==="beides"?2:1)+(I("unsicher")?2:0)+(I("handwerk")||I("menschen")||I("buero")?1:0),
+        path:"Kl. 9 → BF I → Ausbildung oder BF II"});
+      add({id:"bf2",t:"BF I + BF II (Mittlere Reife)",
+        s:brOk&&bf2?"ja":brOk?"bed":"nein",
+        why:!brOk?"Braucht die Berufsreife.":bf2?"Deine Noten passen (Ø "+fmtN(avgAll)+").":"In der BF I nötig: Ø 3,0 und 2 von D/E/M mind. 3 (du: Ø "+fmtN(avgAll)+").",
+        fit:(L==="schule"?3:L==="beides"?2:0)+(I("studium")?1:0)+(I("unsicher")?1:0),
+        path:"Kl. 9 → BF I → BF II → Mittlere Reife"});
+      add({id:"fos",t:"Fachoberschule (Fachabitur)",
+        s:(sek1||(brOk&&bf2))&&avgAll<=3.0&&["d","e","m"].every(k=>G[k]<=4)?"bed":"nein",
+        why:"Erst Mittlere Reife mit Ø 3,0, dann 2 Jahre FOS.",
+        fit:(I("studium")?3:0)+(L==="schule"?2:L==="beides"?1:0),
+        path:"Kl. 10 oder BF II → FOS → Fachhochschule"});
+      add({id:"3jbf",t:"3-jährige Berufsfachschule",
+        s:brOk?"ja":"nein",
+        why:brOk?"Handwerksberuf an der Schule lernen – ohne Betrieb.":"Braucht die Berufsreife.",
+        fit:(I("handwerk")?3:0)+(L!=="arbeit"?1:0),
+        path:"Kl. 9 → 3 Jahre Schule → Geselle"});
+      add({id:"fsj",t:"Freiwilliges Soziales Jahr",
+        s:"bed",
+        why:"1 Jahr im sozialen Bereich ausprobieren. Vorher beraten lassen.",
+        fit:(I("menschen")?3:0)+(I("unsicher")?2:0),
+        path:"Kl. 9 → FSJ → Ausbildung"});
+      add({id:"bvj",t:"BVJ / 10. Schuljahr Berufsreife",
+        s:brOk?"nein":"ja",
+        why:brOk?"Nur nötig ohne Berufsreife.":"1 Jahr, führt zur Berufsreife.",
+        fit:brOk?0:5,
+        path:"Kl. 9 → BVJ → Berufsreife"});
+      const rank={ja:2,bed:1,nein:0};
+      P.sort((a,b)=>(rank[b.s]-rank[a.s])||(b.fit-a.fit));
+      const top=P.filter(p=>p.s!=="nein").sort((a,b)=>b.fit-a.fit)[0];
+      const brCls=br.state==="ja"?"ok":br.state==="ausgleich"?"warn":br.state==="nein"?"bad":"";
+      const brLbl=br.state==="ja"?"Berufsreife: voraussichtlich erreicht":br.state==="ausgleich"?"Berufsreife: erreicht mit Ausgleich":br.state==="nein"?"Berufsreife: so noch nicht erreicht":"Berufsreife: noch offen";
+      let h='<div class="ww-sum"><div class="ww-badge '+brCls+'"><b>'+brLbl+'</b><span>'+br.text+'</span></div>'+
+        '<div class="ww-stats"><span><b>'+fmtN(avgAll)+'</b>Ø alle Fächer</span><span><b>'+fmtN(avgCore)+'</b>Ø D/M/E/WPF</span>'+(avgOther!==null?'<span><b>'+fmtN(avgOther)+'</b>Ø übrige</span>':'')+'</div></div>';
+      if(top&&(st.learn||st.int.length)){h+='<div class="ww-top"><span class="ww-tag">Passt am besten zu dir</span><b>'+top.t+'</b><span class="ww-path">'+top.path+'</span></div>'}
+      else if(!st.learn&&!st.int.length){h+='<div class="ww-empty">Wähle bei „Was passt zu dir?“ noch aus, was dir liegt – dann zeigt der Wegweiser, welcher Weg am besten passt.</div>'}
+      const SL={ja:"✓ möglich",bed:"! mit Bedingungen",nein:"✕ nicht möglich"};
+      h+='<div class="ww-legend"><span class="l-ja">✓ möglich</span><span class="l-bed">! mit Bedingungen</span><span class="l-nein">✕ nicht möglich</span></div>';h+='<div class="ww-cards">'+P.map(p=>'<div class="ww-card s-'+p.s+(top&&p.id===top.id&&(st.learn||st.int.length)?' best':'')+'"><span class="ww-st">'+SL[p.s]+'</span><div class="ww-ct"><b>'+p.t+'</b></div>'+
+        (p.s!=="nein"&&(st.learn||st.int.length)?'<span class="ww-fit" aria-label="Passung">'+"●".repeat(Math.min(3,Math.round(p.fit/2)))+'<i>'+"●".repeat(3-Math.min(3,Math.round(p.fit/2)))+'</i> Passung</span>':'')+
+        '<p>'+p.why+'</p><span class="ww-path">'+p.path+'</span></div>').join("")+'</div>';
+      out.innerHTML=h;
+    }
+    evaluate();
   })();
 
   /* ---------- Checklist ---------- */
