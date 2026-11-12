@@ -295,6 +295,15 @@ section{padding-block:clamp(48px,8vw,88px)}
 .ww-top b{font-family:var(--display);font-size:1.35rem}
 .ww-top .ww-path{color:#fff;opacity:.9}
 .ww-tag{font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.85}
+.ww-bubble{display:flex;gap:12px;align-items:flex-start}
+.ww-av{flex:none;width:46px;height:40px;display:grid;place-items:center;background:var(--warn-c);color:#1E1A22;font-family:var(--display);font-weight:800;font-size:1.3rem}
+.ww-say{position:relative;flex:1;min-width:0;background:color-mix(in srgb,var(--warn-c) 14%,var(--surface));border:2px solid var(--warn-c);border-radius:4px 18px 18px 18px;padding:12px 16px;display:grid;gap:6px}
+.ww-say::before{content:"";position:absolute;left:-10px;top:12px;border:8px solid transparent;border-right-color:var(--warn-c);border-left:0}
+.ww-say b{font-family:var(--display);font-size:1.05rem}
+.ww-say>span{font-size:.93rem}
+.ww-who{display:flex;flex-wrap:wrap;gap:6px}
+.ww-who span{background:var(--surface);border-radius:999px;padding:4px 10px;font-size:.82rem;font-weight:700;box-shadow:inset 0 0 0 1px var(--line)}
+.ww-tip{font-size:.85rem;color:var(--muted)}
 .ww-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
 .ww-card{border-radius:14px;overflow:hidden;display:grid;gap:6px;align-content:start;padding:0 0 14px;border:2px solid transparent}
 .ww-card>*:not(.ww-st){margin-inline:14px}
@@ -1325,9 +1334,9 @@ footer img{height:44px;background:#fff;border-radius:8px;padding:4px 8px}
         why:"1 Jahr im sozialen Bereich ausprobieren. Vorher beraten lassen.",
         fit:(I("menschen")?3:0)+(I("unsicher")?2:0),
         path:"Kl. 9 → FSJ → Ausbildung"});
-      add({id:"bvj",t:"BVJ / 10. Schuljahr Berufsreife",
+      add({id:"bvj",t:"Berufsvorbereitungsjahr (BVJ)",
         s:brOk?"nein":"ja",
-        why:brOk?"Nur nötig ohne Berufsreife.":"1 Jahr, führt zur Berufsreife.",
+        why:brOk?"Nur nötig ohne Berufsreife.":"1 Jahr an der BBS, führt zur Berufsreife.",
         fit:brOk?0:5,
         path:"Kl. 9 → BVJ → Berufsreife"});
       const rank={ja:2,bed:1,nein:0};
@@ -1337,6 +1346,18 @@ footer img{height:44px;background:#fff;border-radius:8px;padding:4px 8px}
       const brLbl=br.state==="ja"?"Berufsreife: voraussichtlich erreicht":br.state==="ausgleich"?"Berufsreife: erreicht mit Ausgleich":br.state==="nein"?"Berufsreife: so noch nicht erreicht":"Berufsreife: noch offen";
       let h='<div class="ww-sum"><div class="ww-badge '+brCls+'"><b>'+brLbl+'</b><span>'+br.text+'</span></div>'+
         '<div class="ww-stats"><span><b>'+fmtN(avgAll)+'</b>Ø alle Fächer</span><span><b>'+fmtN(avgCore)+'</b>Ø D/M/E/WPF</span>'+(avgOther!==null?'<span><b>'+fmtN(avgOther)+'</b>Ø übrige</span>':'')+'</div></div>';
+      const chosen=st.learn||st.int.length;
+      const poss=P.filter(p=>p.s!=="nein").map(p=>p.fit).sort((a,b)=>b-a);
+      const why=[];
+      if(br.state==="ausgleich")why.push("Deine Berufsreife hängt an einem Notenausgleich.");
+      if(br.state==="nein")why.push("Die Berufsreife ist mit diesen Noten noch nicht sicher.");
+      if(!chosen)why.push("Du hast noch nicht angegeben, was dir liegt.");
+      else if(poss.length>1&&(poss[0]-poss[1]<=1||poss[0]<=2))why.push("Mehrere Wege passen ähnlich gut zu dir.");
+      if(I("unsicher"))why.push("Du weißt noch nicht, was du werden willst.");
+      if(P.some(p=>(p.id==="klasse10"||p.id==="bf2")&&p.s==="bed"))why.push("Für den Weg zur Mittleren Reife musst du deine Noten noch verbessern.");
+      if(why.length)h+='<div class="ww-bubble"><span class="ww-av hex" aria-hidden="true">?</span><div class="ww-say"><b>Dein Ergebnis ist noch nicht eindeutig – lass dich früh beraten!</b><span>'+why.join(" ")+'</span>'+
+        '<span class="ww-who"><span>Übergangscoach (Mi + Do)</span><span>Berufsberatung im Haus</span><span>Klassenleitung: Frau Fuchs (9a), Frau Lemcke (9b)</span><span>Praxistag: Herr Fischer, Herr Eberhardt</span></span>'+
+        '<span class="ww-tip">Am besten jetzt einen Gesprächstermin ausmachen – nicht erst kurz vor den Anmeldefristen.</span></div></div>';
       if(top&&(st.learn||st.int.length)){h+='<div class="ww-top"><span class="ww-tag">Passt am besten zu dir</span><b>'+top.t+'</b><span class="ww-path">'+top.path+'</span></div>'}
       else if(!st.learn&&!st.int.length){h+='<div class="ww-empty">Wähle bei „Was passt zu dir?“ noch aus, was dir liegt – dann zeigt der Wegweiser, welcher Weg am besten passt.</div>'}
       const SL={ja:"✓ möglich",bed:"! mit Bedingungen",nein:"✕ nicht möglich"};
