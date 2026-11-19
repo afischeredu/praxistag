@@ -1,6 +1,6 @@
 # Praxistag Startklar – Realschule plus Edenkoben
 
-Infoseite zum Praxistag für Schülerinnen und Schüler. Sie enthält den Ablauf, die Ansprechpersonen, acht Übungen, einen Telefon-Leitfaden und eine Checkliste für die Praxistagmappe.
+Infoseite zum Praxistag für Schülerinnen und Schüler. Sie enthält den Ablauf, die Ansprechpersonen, acht Übungen, einen Telefon-Leitfaden, die Wege nach der 9. Klasse (Ausbildung, Berufsfachschule I und II) und eine Checkliste für die Praxistagmappe.
 
 Die Seite ist eine einzelne HTML-Datei ohne Server, Datenbank oder Build-Schritt. Sie läuft direkt auf GitHub Pages.
 
@@ -8,9 +8,8 @@ Die Seite ist eine einzelne HTML-Datei ohne Server, Datenbank oder Build-Schritt
 
 | Datei | Zweck |
 |---|---|
-| `index.html` | die komplette Webseite (Inhalt, Design und Übungen) |
-| `bilder/praxistag-logo.png` | Praxistag-Logo (Material des Ministeriums für Bildung RLP) |
-| `bilder/schul-logo.png` | Logo der Realschule plus Edenkoben |
+| `index.html` | die komplette Webseite (Inhalt, Design, Übungen und beide Logos sind direkt eingebaut) |
+| `lehrkraefte.html` | Bereich für Lehrkräfte (Kennwort). Die Schülerdaten darin sind verschlüsselt (AES-256) und nur mit dem Kennwort lesbar. Die Besuchsliste wird online auf claude.ai geführt und ist von dort verlinkt. |
 | `.nojekyll` | sorgt dafür, dass GitHub Pages die Dateien unverändert ausliefert |
 
 ## Auf GitHub Pages veröffentlichen
@@ -19,7 +18,7 @@ Die Seite ist eine einzelne HTML-Datei ohne Server, Datenbank oder Build-Schritt
 2. Einen Namen vergeben, z. B. `praxistag`. Sichtbarkeit **Public** wählen (GitHub Pages ist im kostenlosen Konto nur für öffentliche Repositorys verfügbar).
 3. Auf **Create repository** klicken.
 4. Auf der leeren Repository-Seite **uploading an existing file** anklicken.
-5. Den **Inhalt** dieses Ordners hineinziehen: `index.html`, `README.md`, `.nojekyll` und den Ordner `bilder`. Wichtig: `index.html` muss direkt in der obersten Ebene liegen, nicht in einem Unterordner.
+5. Die Dateien `index.html` und `lehrkraefte.html` hineinziehen (dazu gern `README.md` und `.nojekyll`). Mehr braucht die Seite nicht, die Logos stecken in der `index.html`. Wichtig: `index.html` muss direkt in der obersten Ebene liegen, nicht in einem Unterordner.
    - Hinweis: `.nojekyll` ist eine versteckte Datei. Falls sie beim Hochladen fehlt, ist das nicht schlimm, die Seite funktioniert trotzdem.
 6. Unten auf **Commit changes** klicken.
 7. Im Repository **Settings → Pages** öffnen.
@@ -40,6 +39,8 @@ Häufige Stellen zum Anpassen (mit Strg + F suchen):
 | Was | Suchbegriff |
 |---|---|
 | Praxistag-Lehrkräfte | `Herr Fischer` |
+| Klassenleitungen | `Frau Fuchs` |
+| Berufsfachschulen, Fristen | `perspektiven` |
 | Übergangscoach | `Übergangscoach` |
 | Arbeitszeiten im Betrieb | `7 Stunden` |
 | Kontakt Praxistag-Team RLP | `praxistag@pl.rlp.de` |
@@ -56,3 +57,10 @@ Bitte vor der Veröffentlichung mit der Schulleitung bzw. dem/der Datenschutzbea
 ## Quellen
 
 Inhalte aus: bildung.rlp.de/praxistag, Flyer „Praxistag“ des Ministeriums für Bildung RLP, E-Flyer des Pädagogischen Landesinstituts, Praxistagmappe 2025/26 der Schule.
+
+## Lehrkräfte-Bereich
+
+- Aufruf über den Button „Lehrkräfte“ oben rechts oder direkt `…/lehrkraefte.html`.
+- Die Schülerliste, Route und Öffnungszeiten sind mit dem Kennwort verschlüsselt. Wer das Kennwort kennt, kann sie lesen – gebt es nur an die beteiligten Lehrkräfte weiter.
+- Ändert sich die Schülerliste, wird die Datei `lehrkraefte.html` neu erzeugt und ersetzt.
+- Ein kurzes Kennwort lässt sich mit viel Rechenaufwand erraten. Für mehr Sicherheit ein längeres Kennwort wählen.
